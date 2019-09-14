@@ -9,7 +9,12 @@ public class Connection {
         if (conn == null) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/java_mysql", "root", "1234");
+                
+                conn = (Connection) DriverManager.getConnection (
+                        "jdbc:mysql://remotemysql.com/HDwczIp52O", //database
+                        "HDwczIp52O", //user
+                        "UaQzGsMrSL" //password
+                );
 
             } catch (SQLException ex) {
                 throw new SQLException(ex);

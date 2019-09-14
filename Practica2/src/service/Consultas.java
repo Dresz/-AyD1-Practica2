@@ -6,48 +6,56 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import models.Usuario;
+import models.Paciente;
 
 public class Consultas {
     
-    private final String tusuario = "Usuarios";
+    private final String t_paciente = "Paciente";
     
-    public boolean registrar(Connection connection, Usuario user){
+    public boolean registrar(Connection connection, Paciente paciente){
         try{
-            PreparedStatement consulta;
-            consulta = connection.prepareStatement("INSERT INTO "+ this.tusuario 
-                    +"(carnet,nombre,contrasenia) VALUES (?,?,?);");
             
-            consulta.setInt(1,user.getCarnet());
-            consulta.setString(2,user.getName());
-            consulta.setString(3,user.getPassword());
+            PreparedStatement consulta;
+            
+            consulta = connection.prepareStatement("INSERT INTO "+ this.t_paciente 
+                    +"(nombre,telefono,direccion,fechanac,email,password) VALUES (?,?,?,?,?,?);");
+            
+            consulta.setString(1,paciente.getNombre());
+            consulta.setString(2,paciente.getTelefono());
+            consulta.setString(3,paciente.getDireccion());
+            consulta.setString(4,paciente.getFechanac());
+            consulta.setString(5,paciente.getEmail());
+            consulta.setString(6,paciente.getPassword());
+            
             consulta.executeUpdate();
             
             return true;
+            
         } catch (SQLException ex) {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         return false;
     }
     
     
-    public boolean login(Connection conexion, int carnet, String contrasenia) throws SQLException {
+    public boolean login(Connection conexion, String email, String password) throws SQLException {
         int cont = 0;
 
         try{
-           PreparedStatement consulta = conexion.prepareStatement("SELECT carnet FROM " + 
-                   this.tusuario + " WHERE carnet = ? AND contrasenia = ?;");
-           
-           consulta.setInt(1,carnet);
-           consulta.setString(2,contrasenia);
-           
-           ResultSet resultado = consulta.executeQuery();
-           
-           
-           while(resultado.next()){
-               cont++;
-              /*resultado.getInt("carnet")*/
-           }
+            
+            PreparedStatement consulta = conexion.prepareStatement("SELECT email FROM " + 
+                    this.t_paciente + " WHERE email = ? AND password = ?;");
+
+            consulta.setString(1,email);
+            consulta.setString(2,password);
+
+            ResultSet resultado = consulta.executeQuery();
+
+            while(resultado.next()){
+                cont++;
+               /*resultado.getInt("carnet")*/
+            }
            
         }catch(SQLException ex){
            throw new SQLException(ex);
