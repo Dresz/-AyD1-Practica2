@@ -1,24 +1,24 @@
 package service;
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Connection {
     
     private static Connection conn = null;
     private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://remotemysql.com/HDwczIp52O";
-    private static final String admin = "HDwczIp52O";
-    private static final String pass = "UaQzGsMrSL";
+    private static final String url = "jdbc:mysql://db4free.net:3307/practica2";
+    private static final String admin = "practica2user";
+    private static final String pass = "12345678";
 
-    public static Connection obtener() throws SQLException {
+    public static Connection obtener() {
         conn = null;
         try {
             Class.forName(driver);
             conn = (Connection) DriverManager.getConnection(url,admin,pass);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("error clase no encontrada");
+        } catch (SQLException sql) {
+             System.out.println("error fallo la conexion");
         }
 
         return conn;
