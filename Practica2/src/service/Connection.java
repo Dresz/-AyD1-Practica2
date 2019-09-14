@@ -5,22 +5,24 @@ import java.sql.*;
 public class Connection {
     
     private static Connection conn = null;
-    private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://db4free.net:3307/practica2";
-    private static final String admin = "practica2user";
-    private static final String pass = "12345678";
-
+    private static final String DRIVER = "com.mysql.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/practica2";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "1234";
+    
     public static Connection obtener() {
         conn = null;
         try {
-            Class.forName(driver);
-            conn = (Connection) DriverManager.getConnection(url,admin,pass);
+            Class.forName(DRIVER);
+            conn = (Connection) DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            
+            System.out.println("Conexion Establecida");
+            
         } catch (ClassNotFoundException ex) {
-            System.out.println("error clase no encontrada");
+            System.out.println("Error ClassNotFoundException");
         } catch (SQLException sql) {
-             System.out.println("error fallo la conexion");
+             System.out.println("Error SQLException");
         }
-
         return conn;
     }
 

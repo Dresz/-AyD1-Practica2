@@ -27,7 +27,7 @@ public class Consultas {
             consulta.setString(5,paciente.getEmail());
             consulta.setString(6,paciente.getPassword());
             
-            consulta.executeUpdate();
+            consulta.executeQuery();
             
             return true;
             
