@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import service.Connection;
+import service.DB;
 import service.Consultas;
 
 public class Login extends javax.swing.JFrame {
@@ -121,7 +121,7 @@ public class Login extends javax.swing.JFrame {
             Consultas consulta=new Consultas();
             
             try {
-                boolean response = consulta.login((java.sql.Connection) Connection.obtener(),
+                boolean response = consulta.login((java.sql.Connection) DB.obtener(),
                         jemail.getText(),jcontra.getText());
 
                 if(response){

@@ -2,7 +2,7 @@ package practica2;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import service.Connection;
+import service.DB;
 
 public class Practica2 {
 
@@ -12,7 +12,7 @@ public class Practica2 {
         //UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
         //Login login=new Login();
         //login.show();
-        Connection.obtener();
+        DB.obtener();
     }
     
 }
