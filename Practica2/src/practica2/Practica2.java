@@ -8,7 +8,7 @@ public class Practica2 {
     public static void main(String[] args) throws ClassNotFoundException, 
             InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         
-        UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+        UIManager.setLookAndFeel("com.jtattoo.plaf.fast.FastLookAndFeel");
         Login login=new Login();
         login.show();
     }

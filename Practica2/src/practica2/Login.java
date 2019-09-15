@@ -36,7 +36,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("No. Carnet");
+        jLabel1.setText("E-mail");
 
         jLabel2.setText("Contraseña");
 
