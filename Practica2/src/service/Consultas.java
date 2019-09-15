@@ -18,7 +18,7 @@ public class Consultas {
             PreparedStatement consulta;
             
             consulta = connection.prepareStatement("INSERT INTO "+ this.t_paciente 
-                    +"('nombre','telefono','direccion','fechanac','email','password') VALUES (?,?,?,?,?,?);");
+                    +"(nombre,telefono,direccion,fechanac,email,password) VALUES (?,?,?,?,?,?);");
             
             consulta.setString(1,paciente.getNombre());
             consulta.setString(2,paciente.getTelefono());
@@ -27,7 +27,7 @@ public class Consultas {
             consulta.setString(5,paciente.getEmail());
             consulta.setString(6,paciente.getPassword());
             
-            consulta.executeQuery();
+            consulta.executeUpdate();
             
             return true;
             

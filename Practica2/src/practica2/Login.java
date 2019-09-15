@@ -126,6 +126,7 @@ public class Login extends javax.swing.JFrame {
 
                 if(response){
                     Principal principal=new Principal();
+                    principal.setUser(jemail.getText());
                     principal.show();
                     this.show(false);
                 }
