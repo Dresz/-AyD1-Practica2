@@ -2,7 +2,7 @@ package practica2;
 
 import javax.swing.JOptionPane;
 import models.Paciente;
-import service.Connection;
+import service.DB;
 import service.Consultas;
 
 public class Registro extends javax.swing.JFrame {
@@ -173,7 +173,7 @@ public class Registro extends javax.swing.JFrame {
                 paciente.setFechanac(jfecha.getText());
 
                 Consultas consulta=new Consultas();
-                boolean responce = consulta.registrar((java.sql.Connection) Connection.obtener(), paciente);
+                boolean responce = consulta.registrar((java.sql.Connection) DB.obtener(), paciente);
                 if(responce){
                     Login login=new Login();
                     login.show(true);
