@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.Cita;
+import models.Doctor;
 import models.Paciente;
 
 public class Consultas {
@@ -68,6 +69,25 @@ public class Consultas {
         
         return false;
     }
+    
+    public LinkedList<Doctor> getDoctores(Connection conexion) throws SQLException{
+        PreparedStatement consulta = conexion.prepareStatement( "SELECT doc.iddoctor, doc.nombre, doc.telefono, esp.nombre\n" +
+                                                                "FROM Doctor doc, Especialidad esp\n" +
+                                                                "WHERE doc.especialidad = esp.idespecialidad;");
+        ResultSet res = consulta.executeQuery();
+
+        LinkedList<Doctor> doctores = new LinkedList<>();
+        while(res.next()){
+            Doctor doctor = new Doctor();
+            doctor.setIddoctor(res.getInt(1));
+            doctor.setNombre(res.getNString(2));
+            doctor.setTelefono(res.getNString(3));
+            doctor.setEspecialidad(res.getNString(4));    
+            doctores.add(doctor);
+        }        
+        return doctores;
+    }
+    
     
     public LinkedList<Cita> getCitas(Connection conexion) throws SQLException{
         PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita");
