@@ -173,6 +173,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel10.setText("Citas");
 
         jButton4.setText("Cancelar Cita");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Doctor");
 
@@ -315,6 +320,15 @@ public class Principal extends javax.swing.JFrame {
         //printCitas();
     }//GEN-LAST:event_formWindowOpened
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Consultas con = new Consultas();
+        try {
+            con.Eliminar_Cita((java.sql.Connection) DB.obtener(), jComboBox3.getSelectedItem().toString());
+        } catch (SQLException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     private void printCitas(){
         Consultas consulta = new Consultas();
         try {
@@ -323,7 +337,7 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+   
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {

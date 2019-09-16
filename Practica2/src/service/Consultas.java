@@ -87,5 +87,17 @@ public class Consultas {
         
         return citas;
     }
+    
+    public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
+    {
+       try {
+            PreparedStatement consulta = conexion.prepareStatement("Delete * FROM Cita where idcita =  ?;");
+            consulta.setString(1,id);
+            consulta.executeUpdate();
+            return true;
+       } catch (Exception e) {
+           return false;
+       }
+    }
 
 }
