@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.Cita;
 import models.Paciente;
 
 public class Consultas {
@@ -65,6 +67,25 @@ public class Consultas {
             return true;
         
         return false;
+    }
+    
+    public LinkedList<Cita> getCitas(Connection conexion) throws SQLException{
+        PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita");
+        ResultSet res = consulta.executeQuery();
+
+        LinkedList<Cita> citas = new LinkedList<>();
+        while(res.next()){
+            Cita cita = new Cita();
+            cita.setIdcita(res.getInt("idcita"));
+            cita.setDoctor(res.getInt("doctor"));
+            cita.setPaciente(res.getInt("paciente"));
+            cita.setFecha(res.getDate("fecha"));
+            cita.setHorainicio(res.getTimestamp("horainicio"));
+            cita.setHorafin(res.getTimestamp("horafin"));
+            citas.add(cita);
+        }
+        
+        return citas;
     }
 
 }
