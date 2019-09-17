@@ -89,6 +89,35 @@ public class Consultas {
     }
     
     
+    public boolean crearCita(Connection connection, Cita cita){
+        try{
+            
+            PreparedStatement consulta;
+            
+            consulta = connection.prepareStatement("INSERT INTO Cita"
+                    + "(doctor,paciente,fecha,horainicio,horafin) VALUES (?,?,?,?,?);");
+            
+            consulta.setInt(1,cita.getDoctor());
+            consulta.setInt(2,cita.getPaciente());
+            consulta.setDate(3,cita.getFecha());
+            consulta.setTime(4,cita.getHorainicio());
+            consulta.setTime(5,cita.getHorafin());
+            
+            
+            consulta.executeUpdate();            
+            
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+        
+        return true;
+        
+    }
+    
+    
+    
     public LinkedList<Cita> getCitas(Connection conexion) throws SQLException{
         PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita");
         ResultSet res = consulta.executeQuery();
@@ -100,8 +129,8 @@ public class Consultas {
             cita.setDoctor(res.getInt("doctor"));
             cita.setPaciente(res.getInt("paciente"));
             cita.setFecha(res.getDate("fecha"));
-            cita.setHorainicio(res.getTimestamp("horainicio"));
-            cita.setHorafin(res.getTimestamp("horafin"));
+            cita.setHorainicio(res.getTime("horainicio"));
+            cita.setHorafin(res.getTime("horafin"));
             citas.add(cita);
         }
         

@@ -6,7 +6,8 @@
 package models;
 
 import java.sql.Date;
-import java.sql.Timestamp;
+import java.sql.Time;
+
 
 /**
  *
@@ -17,8 +18,8 @@ public class Cita {
     private int doctor;
     private int paciente;
     private java.sql.Date fecha;
-    private java.sql.Timestamp horainicio;
-    private java.sql.Timestamp horafin;
+    private java.sql.Time horainicio;
+    private java.sql.Time horafin;
 
     public int getIdcita() {
         return idcita;
@@ -52,19 +53,19 @@ public class Cita {
         this.fecha = fecha;
     }
 
-    public Timestamp getHorainicio() {
+    public Time getHorainicio() {
         return horainicio;
     }
 
-    public void setHorainicio(Timestamp horainicio) {
+    public void setHorainicio(Time horainicio) {
         this.horainicio = horainicio;
     }
 
-    public Timestamp getHorafin() {
+    public Time getHorafin() {
         return horafin;
     }
 
-    public void setHorafin(Timestamp horafin) {
+    public void setHorafin(Time horafin) {
         this.horafin = horafin;
     }
     
