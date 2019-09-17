@@ -20,7 +20,7 @@ public class Cita {
     private java.sql.Date fecha;
     private java.sql.Time horainicio;
     private java.sql.Time horafin;
-
+    
     public int getIdcita() {
         return idcita;
     }
@@ -69,5 +69,8 @@ public class Cita {
         this.horafin = horafin;
     }
     
-    
+    @Override
+    public String toString() {
+        return "" + this.getIdcita() + " - " + this.fecha.toString();
+    }
 }
