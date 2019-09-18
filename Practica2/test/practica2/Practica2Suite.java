@@ -1,7 +1,9 @@
 /*
- * metodos que se ejecutan globalmente en el paquete service
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package service;
+package practica2;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,11 +14,11 @@ import org.junit.runners.Suite;
 
 /**
  *
- * @author hp
+ * @author Luis
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({DBTest.class, ConsultasTest.class})
-public class ServiceSuite {
+@Suite.SuiteClasses({practica2.PrincipalTest.class, practica2.RegistroTest.class, practica2.Practica2Test.class, practica2.LoginTest.class})
+public class Practica2Suite {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
