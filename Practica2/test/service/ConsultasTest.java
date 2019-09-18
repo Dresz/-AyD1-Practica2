@@ -4,16 +4,18 @@
 package service;
 
 import java.sql.Connection;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.LinkedList;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 
 public class ConsultasTest {
@@ -113,18 +115,72 @@ public class ConsultasTest {
     }
 
     /**
+     * Test of getDoctorPorId method, of class Consultas.
+     */
+    @Test
+    public void testGetDoctorPorId() throws Exception {
+        System.out.println("getDoctorPorId");
+        Connection conexion = DB.obtener();
+        Consultas instance = new Consultas();
+        int iddoctor = 1;
+        Doctor result = instance.getDoctorPorId(conexion, iddoctor);
+        assertNotNull(result);
+    }
+    
+    /**
+     * Test of getPacientePorId method, of class Consultas.
+     */
+    @Test
+    public void testGetPacientePorId() throws Exception {
+        System.out.println("getPacientePorId");
+        Connection conexion = DB.obtener();
+        Consultas instance = new Consultas();
+        int idpaciente = 1;
+        Paciente result = instance.getPacientePorId(conexion, idpaciente);
+        assertNotNull(result);
+    }
+    
+    /**
+     * Test of getPacientes method, of class Consultas.
+     */
+    @Test
+    public void testGetPacientes() throws Exception {
+        System.out.println("getPacientes");
+        Connection conexion = DB.obtener();
+        Consultas instance = new Consultas();
+        LinkedList<Paciente> result = instance.getPacientes(conexion);
+        assertNotNull(result);
+    }
+    
+    /**
      * Test of getCitas method, of class Consultas.
      */
     @Test
     public void testGetCitas() throws Exception {
         System.out.println("getCitas");
-        Connection conexion = null;
+        Connection conexion = DB.obtener();
         Consultas instance = new Consultas();
-        LinkedList<Cita> expResult = null;
         LinkedList<Cita> result = instance.getCitas(conexion);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotNull(result);
+    }
+    
+    /**
+     * Test of modificarCita method, of class Consultas.
+     */
+    @Test
+    public void testModificarCita() throws Exception {
+        System.out.println("modificarCita");
+        Connection conexion = DB.obtener();
+        Consultas instance = new Consultas();
+        Cita cita = new Cita();
+        cita.setIdcita(1);
+        cita.setDoctor(1);
+        cita.setPaciente(1);
+        cita.setFecha(Date.valueOf("2019-09-17"));
+        cita.setHorainicio(Time.valueOf("00:00:00"));
+        cita.setHorafin(Time.valueOf("01:00:10"));
+        Boolean result = instance.modificarCita(conexion, cita);
+        assertTrue(result);
     }
 
     /**
