@@ -91,11 +91,11 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Hora Inicio (HH:MM:SS)");
+        jLabel4.setText("Hora Inicio (HH:MM)");
 
         jScrollPane1.setViewportView(jt_hora_ini);
 
-        jLabel5.setText("Hora Fin (HH:MM:SS)");
+        jLabel5.setText("Hora Fin (HH:MM)");
 
         jScrollPane2.setViewportView(jt_hora_fin);
 
@@ -352,7 +352,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
         //Comentado para no poner lenta la app
-        if (jTabbedPane2.getSelectedIndex() == 0 && false) {
+        if (jTabbedPane2.getSelectedIndex() == 0) {
             Consultas con = new Consultas();
             try {
                 LinkedList<Doctor> docs = con.getDoctores((java.sql.Connection) DB.obtener());
@@ -453,23 +453,33 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public Cita crearCita() {
-        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();
-        int idDoctor = 0;     // Estos campos se tienen que modificar luego
-        int paciente = 0; //Estos campos se tienen que modificar luego
+        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();        
+        int paciente = 1; //Estos campos se tienen que modificar luego
         Date fecha = fechaCita.getDate();
         String[] hora_Ini = jt_hora_ini.getText().split(":");
         String[] hora_Fin = jt_hora_fin.getText().split(":");
 
-        if (fecha == null || hora_Ini.length != 3 || hora_Fin.length != 3) {
+        if (fecha == null || hora_Ini.length != 2 || hora_Fin.length != 2) {
             return null;
         }
 
         Cita c = new Cita();
-        c.setDoctor(idDoctor);
+        c.setDoctor(doctor.getIddoctor());
         c.setPaciente(paciente);
         c.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));
-        c.setHorainicio(new Time(Integer.parseInt(hora_Ini[0]), Integer.parseInt(hora_Ini[1]), Integer.parseInt(hora_Ini[2])));
-        c.setHorafin(new Time(Integer.parseInt(hora_Fin[0]), Integer.parseInt(hora_Fin[1]), Integer.parseInt(hora_Fin[2])));
+        c.setHorainicio(new Time(Integer.parseInt(hora_Ini[0]), Integer.parseInt(hora_Ini[1]), 0));
+        c.setHorafin(new Time(Integer.parseInt(hora_Fin[0]), Integer.parseInt(hora_Fin[1]), 0));
         return c;
     }
+
+    public void llenarDoctores() {
+        Consultas con = new Consultas();
+        try {
+            LinkedList<Doctor> docs = con.getDoctores((java.sql.Connection) DB.obtener());
+            setDoctors(docs);
+        } catch (SQLException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
