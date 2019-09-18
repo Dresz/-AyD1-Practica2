@@ -1,7 +1,7 @@
 package models;
 
 public class Paciente {
-
+    private int idpaciente;
     private String nombre;
     private String telefono;
     private String direccion;
@@ -16,6 +16,14 @@ public class Paciente {
         fechanac="";
         email="";
         password="";
+    }
+    
+    public int getIdpaciente() {
+        return idpaciente;
+    }
+
+    public void setIdpaciente(int idpaciente) {
+        this.idpaciente = idpaciente;
     }
 
     public String getNombre() {
@@ -64,6 +72,11 @@ public class Paciente {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    @Override
+    public String toString() {
+        return this.nombre;
     }
  
 }
