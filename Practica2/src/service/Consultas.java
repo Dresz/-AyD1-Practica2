@@ -116,10 +116,65 @@ public class Consultas {
         
     }
     
+    /*MOD*/
+    public Doctor getDoctorPorId(Connection conexion, int iddoctor) throws SQLException{
+        PreparedStatement consulta = conexion.prepareStatement("SELECT doc.iddoctor, doc.nombre, doc.telefono, esp.nombre\n" +
+                                                                "FROM Doctor doc, Especialidad esp\n" +
+                                                                "WHERE doc.especialidad = esp.idespecialidad AND doc.iddoctor=?;");
+        consulta.setInt(1, iddoctor);
+        ResultSet res = consulta.executeQuery();
+
+        Doctor doctor = new Doctor();
+        while(res.next()){
+            doctor.setIddoctor(res.getInt(1));
+            doctor.setNombre(res.getNString(2));
+            doctor.setTelefono(res.getNString(3));
+            doctor.setEspecialidad(res.getNString(4));
+        }
+        
+        return doctor;
+    }
+    public Paciente getPacientePorId(Connection conexion, int idpaciente) throws SQLException{
+        PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Paciente WHERE idpaciente=?;");
+        consulta.setInt(1, idpaciente);
+        ResultSet res = consulta.executeQuery();
+
+        Paciente paciente = new Paciente();
+        while(res.next()){
+            paciente.setIdpaciente(res.getInt("idpaciente"));
+            paciente.setNombre(res.getNString("nombre"));
+            paciente.setTelefono(res.getNString("telefono"));
+            paciente.setDireccion(res.getNString("direccion"));
+            paciente.setFechanac(res.getDate("fechanac").toString());
+            paciente.setEmail(res.getNString("email"));
+            paciente.setPassword(res.getNString("password"));
+        }
+        
+        return paciente;
+    }
     
+    public LinkedList<Paciente> getPacientes(Connection conexion) throws SQLException{
+        PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Paciente;");
+        ResultSet res = consulta.executeQuery();
+
+        LinkedList<Paciente> pacientes = new LinkedList<>();
+        while(res.next()){
+            Paciente paciente = new Paciente();
+            paciente.setIdpaciente(res.getInt("idpaciente"));
+            paciente.setNombre(res.getNString("nombre"));
+            paciente.setTelefono(res.getNString("telefono"));
+            paciente.setDireccion(res.getNString("direccion"));
+            paciente.setFechanac(res.getDate("fechanac").toString());
+            paciente.setEmail(res.getNString("email"));
+            paciente.setPassword(res.getNString("password"));
+            pacientes.add(paciente);
+        }
+        
+        return pacientes;
+    }
     
     public LinkedList<Cita> getCitas(Connection conexion) throws SQLException{
-        PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita");
+        PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita;");
         ResultSet res = consulta.executeQuery();
 
         LinkedList<Cita> citas = new LinkedList<>();
@@ -136,6 +191,27 @@ public class Consultas {
         
         return citas;
     }
+    
+    public boolean modificarCita(Connection connection, Cita cita){
+        try{
+            PreparedStatement consulta;
+            consulta = connection.prepareStatement("UPDATE Cita SET "
+                    + "doctor=?,paciente=?,fecha=?,horainicio=?,horafin=? WHERE idcita=?;");
+            
+            consulta.setInt(1,cita.getDoctor());
+            consulta.setInt(2,cita.getPaciente());
+            consulta.setDate(3,cita.getFecha());
+            consulta.setTime(4,cita.getHorainicio());
+            consulta.setTime(5,cita.getHorafin());
+            consulta.setInt(6, cita.getIdcita());
+            consulta.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
     
     public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
     {
