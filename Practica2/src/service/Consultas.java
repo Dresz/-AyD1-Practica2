@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -91,20 +92,19 @@ public class Consultas {
     
     public boolean crearCita(Connection connection, Cita cita){
         try{
-            
             PreparedStatement consulta;
+                       
             
-            consulta = connection.prepareStatement("INSERT INTO Cita"
-                    + "(doctor,paciente,fecha,horainicio,horafin) VALUES (?,?,?,?,?);");
+            consulta = connection.prepareStatement("INSERT INTO Cita(doctor,paciente,fecha,horainicio,horafin) VALUES (?,?,?,?,?)");
             
             consulta.setInt(1,cita.getDoctor());
             consulta.setInt(2,cita.getPaciente());
             consulta.setDate(3,cita.getFecha());
             consulta.setTime(4,cita.getHorainicio());
             consulta.setTime(5,cita.getHorafin());
+                        
+            consulta.executeUpdate();       
             
-            
-            consulta.executeUpdate();            
             
             
         } catch (SQLException ex) {

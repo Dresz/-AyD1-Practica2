@@ -189,7 +189,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hora Inicio (HH:MM:SS)"/>
+                <Property name="text" type="java.lang.String" value="Hora Inicio (HH:MM)"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -205,7 +205,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hora Fin (HH:MM:SS)"/>
+                <Property name="text" type="java.lang.String" value="Hora Fin (HH:MM)"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
