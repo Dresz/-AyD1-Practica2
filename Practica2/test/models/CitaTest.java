@@ -49,8 +49,6 @@ public class CitaTest {
         int expResult = 0;
         int result = instance.getIdcita();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -62,8 +60,7 @@ public class CitaTest {
         int idcita = 0;
         Cita instance = new Cita();
         instance.setIdcita(idcita);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(idcita, instance.getIdcita());
     }
 
     /**
@@ -76,8 +73,7 @@ public class CitaTest {
         int expResult = 0;
         int result = instance.getDoctor();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -89,8 +85,8 @@ public class CitaTest {
         int doctor = 0;
         Cita instance = new Cita();
         instance.setDoctor(doctor);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(doctor, instance.getDoctor());
+        
     }
 
     /**
@@ -104,7 +100,7 @@ public class CitaTest {
         int result = instance.getPaciente();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -117,7 +113,7 @@ public class CitaTest {
         Cita instance = new Cita();
         instance.setPaciente(paciente);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +127,7 @@ public class CitaTest {
         Date result = instance.getFecha();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -144,7 +140,7 @@ public class CitaTest {
         Cita instance = new Cita();
         instance.setFecha(fecha);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -158,7 +154,7 @@ public class CitaTest {
         Time result = instance.getHorainicio();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -171,7 +167,7 @@ public class CitaTest {
         Cita instance = new Cita();
         instance.setHorainicio(horainicio);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -185,7 +181,7 @@ public class CitaTest {
         Time result = instance.getHorafin();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -198,7 +194,7 @@ public class CitaTest {
         Cita instance = new Cita();
         instance.setHorafin(horafin);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -212,7 +208,7 @@ public class CitaTest {
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

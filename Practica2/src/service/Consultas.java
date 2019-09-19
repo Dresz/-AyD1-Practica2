@@ -92,8 +92,7 @@ public class Consultas {
     
     public boolean crearCita(Connection connection, Cita cita){
         try{
-            PreparedStatement consulta;
-                       
+            PreparedStatement consulta;                       
             
             consulta = connection.prepareStatement("INSERT INTO Cita(doctor,paciente,fecha,horainicio,horafin) VALUES (?,?,?,?,?)");
             

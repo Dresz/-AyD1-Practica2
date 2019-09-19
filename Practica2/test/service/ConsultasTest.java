@@ -89,13 +89,13 @@ public class ConsultasTest {
     @Test
     public void testGetDoctores() throws Exception {
         System.out.println("getDoctores");
-        Connection conexion = null;
+        Connection conexion = DB.obtener();
         Consultas instance = new Consultas();
-        LinkedList<Doctor> expResult = null;
+        boolean expResult = true;
         LinkedList<Doctor> result = instance.getDoctores(conexion);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean obtenidos = result.size()>0;
+        assertEquals(expResult, obtenidos);
+                
     }
 
     /**
@@ -104,14 +104,18 @@ public class ConsultasTest {
     @Test
     public void testCrearCita() {
         System.out.println("crearCita");
-        Connection connection = null;
-        Cita cita = null;
+        Connection connection = DB.obtener();
+        Cita cita = new Cita();
+        cita.setDoctor(1);
+        cita.setPaciente(1);
+        cita.setFecha(new java.sql.Date(2011, 11, 27));
+        cita.setHorainicio(new Time(10, 30, 0));
+        cita.setHorafin(new Time(11,30,0));
         Consultas instance = new Consultas();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.crearCita(connection, cita);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
