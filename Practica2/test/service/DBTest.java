@@ -6,10 +6,10 @@ package service;
 import java.sql.Connection;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class DBTest {
     
@@ -42,6 +42,7 @@ public class DBTest {
     @Test
     public void testObtener() {
         System.out.println("obtener");
+        DB db = new DB();
         Connection expResult = null;
         Connection result = DB.obtener();
         //assertEquals(expResult, result); no tiene sentido que la conexion devuelta sea null
@@ -50,7 +51,7 @@ public class DBTest {
             fail("La conexion no se logro establecer");
         }
     }
-
+    
     /**
      * Test of cerrar method, of class DB.
      */

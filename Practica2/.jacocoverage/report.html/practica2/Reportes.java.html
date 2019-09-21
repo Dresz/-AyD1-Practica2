@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Reportes.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Practica2&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">practica2</a> &gt; <span class="el_source">Reportes.java</span></div><h1>Reportes.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Reportes.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Practica2&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">practica2</a> &gt; <span class="el_source">Reportes.java</span></div><h1>Reportes.java</h1><pre class="source lang-java linenums">/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -525,8 +525,8 @@ public class Reportes extends javax.swing.JFrame {
         /* Create and display the form */
 <span class="fc" id="L526">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="fc" id="L528">                new Reportes().setVisible(true);</span>
-<span class="fc" id="L529">            }</span>
+<span class="nc" id="L528">                new Reportes().setVisible(true);</span>
+<span class="nc" id="L529">            }</span>
         });
 <span class="fc" id="L531">    }</span>
 
@@ -578,47 +578,47 @@ public boolean setReporte(LinkedList&lt;ReporteModel&gt; reportes, DefaultTableM
     }
 public boolean setPaciente(LinkedList&lt;Paciente&gt; pacientes) {
 <span class="fc" id="L580">        jComboBox1.removeAll();</span>
-<span class="pc bpc" id="L581" title="1 of 2 branches missed.">        if (pacientes == null) {</span>
+<span class="fc bfc" id="L581" title="All 2 branches covered.">        if (pacientes == null) {</span>
 <span class="fc" id="L582">            return false;</span>
         }
-<span class="nc bnc" id="L584" title="All 2 branches missed.">        for (Paciente paciente : pacientes) {</span>
+<span class="pc bpc" id="L584" title="1 of 2 branches missed.">        for (Paciente paciente : pacientes) {</span>
 <span class="nc" id="L585">            jComboBox1.addItem(paciente);</span>
 <span class="nc" id="L586">        }</span>
-<span class="nc" id="L587">        return true;</span>
+<span class="fc" id="L587">        return true;</span>
     }
 public boolean setDoctores(LinkedList&lt;Doctor&gt; doctores) {
 <span class="fc" id="L590">        jComboBox1.removeAll();</span>
-<span class="pc bpc" id="L591" title="1 of 2 branches missed.">        if (doctores == null) {</span>
+<span class="fc bfc" id="L591" title="All 2 branches covered.">        if (doctores == null) {</span>
 <span class="fc" id="L592">            return false;</span>
         }
-<span class="nc bnc" id="L594" title="All 2 branches missed.">        for (Doctor doctor : doctores) {</span>
+<span class="pc bpc" id="L594" title="1 of 2 branches missed.">        for (Doctor doctor : doctores) {</span>
 <span class="nc" id="L595">            jComboBox2.addItem(doctor);</span>
 <span class="nc" id="L596">        }</span>
-<span class="nc" id="L597">        return true;</span>
+<span class="fc" id="L597">        return true;</span>
     }
 
 public boolean generarPDF(String nombre, String ubicacion, JTable tabla,String titulo) throws FileNotFoundException, DocumentException{
         try{
 <span class="fc" id="L602">            Document doc = new Document();</span>
-<span class="nc" id="L603">            PdfWriter.getInstance(doc, new FileOutputStream(ubicacion+&quot;\\&quot;+nombre+&quot;.pdf&quot;));</span>
-<span class="nc" id="L604">            doc.open();</span>
-<span class="nc" id="L605">            PdfPTable pdftable = new PdfPTable(tabla.getColumnCount());</span>
-<span class="nc" id="L606">            Paragraph p=new Paragraph();</span>
-<span class="nc" id="L607">            Font f=new Font();</span>
-<span class="nc" id="L608">            f.setStyle(Font.BOLDITALIC);</span>
-<span class="nc" id="L609">            f.setSize(14);</span>
-<span class="nc" id="L610">            p.setFont(f);</span>
-<span class="nc" id="L611">            p.add(titulo);</span>
+<span class="fc" id="L603">            PdfWriter.getInstance(doc, new FileOutputStream(ubicacion+&quot;\\&quot;+nombre+&quot;.pdf&quot;));</span>
+<span class="fc" id="L604">            doc.open();</span>
+<span class="fc" id="L605">            PdfPTable pdftable = new PdfPTable(tabla.getColumnCount());</span>
+<span class="fc" id="L606">            Paragraph p=new Paragraph();</span>
+<span class="fc" id="L607">            Font f=new Font();</span>
+<span class="fc" id="L608">            f.setStyle(Font.BOLDITALIC);</span>
+<span class="fc" id="L609">            f.setSize(14);</span>
+<span class="fc" id="L610">            p.setFont(f);</span>
+<span class="fc" id="L611">            p.add(titulo);</span>
             
-<span class="nc" id="L613">            doc.add(p);</span>
-<span class="nc bnc" id="L614" title="All 2 branches missed.">            for(int rows=0;rows&lt;tabla.getRowCount();rows++){</span>
-<span class="nc bnc" id="L615" title="All 2 branches missed.">                for(int cols=0;cols&lt;tabla.getColumnCount();cols++){</span>
-<span class="nc" id="L616">                    pdftable.addCell(tabla.getModel().getValueAt(rows,cols).toString());</span>
+<span class="fc" id="L613">            doc.add(p);</span>
+<span class="fc bfc" id="L614" title="All 2 branches covered.">            for(int rows=0;rows&lt;tabla.getRowCount();rows++){</span>
+<span class="fc bfc" id="L615" title="All 2 branches covered.">                for(int cols=0;cols&lt;tabla.getColumnCount();cols++){</span>
+<span class="fc" id="L616">                    pdftable.addCell(tabla.getModel().getValueAt(rows,cols).toString());</span>
                 }   
             }
-<span class="nc" id="L619">            doc.add(pdftable);</span>
-<span class="nc" id="L620">            doc.close();</span>
-<span class="nc" id="L621">            return true;</span>
+<span class="fc" id="L619">            doc.add(pdftable);</span>
+<span class="fc" id="L620">            doc.close();</span>
+<span class="fc" id="L621">            return true;</span>
         }
 <span class="nc" id="L623">        catch(DocumentException e){</span>
 <span class="nc" id="L624">            System.out.println(&quot;Boludo&quot;);</span>

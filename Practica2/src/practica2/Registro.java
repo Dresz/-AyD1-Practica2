@@ -2,8 +2,8 @@ package practica2;
 
 import javax.swing.JOptionPane;
 import models.Paciente;
-import service.DB;
 import service.Consultas;
+import service.DB;
 
 public class Registro extends javax.swing.JFrame {
 
@@ -156,7 +156,10 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        signUpAction();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+    protected boolean signUpAction(){
         //sing up button
         if(!jnombre.getText().equals("") && !jemail.getText().equals("") &&
                 !jcontra1.getText().equals("") && !jdireccion.getText().equals("") &&
@@ -178,6 +181,7 @@ public class Registro extends javax.swing.JFrame {
                     Login login=new Login();
                     login.show(true);
                     this.show(false);
+                    return true;
                 }
             }else{
                 JOptionPane.showMessageDialog(this,"Error Contraseña no coincide");
@@ -186,10 +190,9 @@ public class Registro extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this,"Llene todos los campos");
         }
-        
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+        return false;
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         Login login=new Login();
@@ -221,12 +224,12 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JPasswordField jcontra1;
-    private javax.swing.JPasswordField jcontra2;
-    private javax.swing.JTextField jdireccion;
-    private javax.swing.JTextField jemail;
-    private javax.swing.JFormattedTextField jfecha;
-    private javax.swing.JTextField jnombre;
-    private javax.swing.JTextField jtelefono;
+    protected javax.swing.JPasswordField jcontra1;
+    protected javax.swing.JPasswordField jcontra2;
+    protected javax.swing.JTextField jdireccion;
+    protected javax.swing.JTextField jemail;
+    protected javax.swing.JFormattedTextField jfecha;
+    protected javax.swing.JTextField jnombre;
+    protected javax.swing.JTextField jtelefono;
     // End of variables declaration//GEN-END:variables
 }

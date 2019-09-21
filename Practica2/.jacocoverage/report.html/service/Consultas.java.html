@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Consultas.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Practica2&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">Consultas.java</span></div><h1>Consultas.java</h1><pre class="source lang-java linenums">package service;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Consultas.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Practica2&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">Consultas.java</span></div><h1>Consultas.java</h1><pre class="source lang-java linenums">package service;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -32,15 +32,15 @@ import models.ReporteModel;
 <span class="fc" id="L32">            consulta.setString(5,paciente.getEmail());</span>
 <span class="fc" id="L33">            consulta.setString(6,paciente.getPassword());</span>
             
-<span class="nc" id="L35">            consulta.executeUpdate();</span>
+<span class="fc" id="L35">            consulta.executeUpdate();</span>
             
-<span class="nc" id="L37">            return true;</span>
+<span class="fc" id="L37">            return true;</span>
             
-<span class="fc" id="L39">        } catch (SQLException ex) {</span>
-<span class="fc" id="L40">            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L39">        } catch (SQLException ex) {</span>
+<span class="nc" id="L40">            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);</span>
         }
 
-<span class="fc" id="L43">        return false;</span>
+<span class="nc" id="L43">        return false;</span>
     }
     
     
@@ -57,8 +57,8 @@ import models.ReporteModel;
 
 <span class="fc" id="L58">            ResultSet resultado = consulta.executeQuery();</span>
 
-<span class="pc bpc" id="L60" title="1 of 2 branches missed.">            while(resultado.next()){</span>
-<span class="nc" id="L61">                cont++;</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">            while(resultado.next()){</span>
+<span class="fc" id="L61">                cont++;</span>
                /*resultado.getInt(&quot;carnet&quot;)*/
             }
            
@@ -66,8 +66,8 @@ import models.ReporteModel;
 <span class="nc" id="L66">           throw new SQLException(ex);</span>
 <span class="fc" id="L67">        }</span>
         
-<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        if(cont == 1)</span>
-<span class="nc" id="L70">            return true;</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if(cont == 1)</span>
+<span class="fc" id="L70">            return true;</span>
         
 <span class="fc" id="L72">        return false;</span>
     }
@@ -191,124 +191,163 @@ import models.ReporteModel;
         
 <span class="fc" id="L192">        return citas;</span>
     }
+    public LinkedList&lt;Cita&gt; getCitasid(Connection conexion,String id) throws SQLException{
+<span class="fc" id="L195">        PreparedStatement consulta = conexion.prepareStatement(&quot;SELECT * FROM Cita ci,Paciente pa WHERE pa.email='&quot;+id+&quot;' AND ci.paciente = pa.idpaciente;&quot;);</span>
+<span class="fc" id="L196">        ResultSet res = consulta.executeQuery();</span>
+
+<span class="fc" id="L198">        LinkedList&lt;Cita&gt; citas = new LinkedList&lt;&gt;();</span>
+<span class="pc bpc" id="L199" title="1 of 2 branches missed.">        while(res.next()){</span>
+<span class="nc" id="L200">            Cita cita = new Cita();</span>
+<span class="nc" id="L201">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
+<span class="nc" id="L202">            cita.setDoctor(res.getInt(&quot;doctor&quot;));</span>
+<span class="nc" id="L203">            cita.setPaciente(res.getInt(&quot;paciente&quot;));</span>
+<span class="nc" id="L204">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
+<span class="nc" id="L205">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
+<span class="nc" id="L206">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
+<span class="nc" id="L207">            citas.add(cita);</span>
+<span class="nc" id="L208">        }</span>
+        
+<span class="fc" id="L210">        return citas;</span>
+    }
     
     public boolean modificarCita(Connection connection, Cita cita){
         try{
             PreparedStatement consulta;
-<span class="fc" id="L198">            consulta = connection.prepareStatement(&quot;UPDATE Cita SET &quot;</span>
+<span class="fc" id="L216">            consulta = connection.prepareStatement(&quot;UPDATE Cita SET &quot;</span>
                     + &quot;doctor=?,paciente=?,fecha=?,horainicio=?,horafin=? WHERE idcita=?;&quot;);
             
-<span class="fc" id="L201">            consulta.setInt(1,cita.getDoctor());</span>
-<span class="fc" id="L202">            consulta.setInt(2,cita.getPaciente());</span>
-<span class="fc" id="L203">            consulta.setDate(3,cita.getFecha());</span>
-<span class="fc" id="L204">            consulta.setTime(4,cita.getHorainicio());</span>
-<span class="fc" id="L205">            consulta.setTime(5,cita.getHorafin());</span>
-<span class="fc" id="L206">            consulta.setInt(6, cita.getIdcita());</span>
-<span class="fc" id="L207">            consulta.executeUpdate();</span>
-<span class="fc" id="L208">            return true;</span>
-<span class="nc" id="L209">        } catch (SQLException ex) {</span>
-<span class="nc" id="L210">            ex.printStackTrace();</span>
-<span class="nc" id="L211">            return false;</span>
+<span class="fc" id="L219">            consulta.setInt(1,cita.getDoctor());</span>
+<span class="fc" id="L220">            consulta.setInt(2,cita.getPaciente());</span>
+<span class="fc" id="L221">            consulta.setDate(3,cita.getFecha());</span>
+<span class="fc" id="L222">            consulta.setTime(4,cita.getHorainicio());</span>
+<span class="fc" id="L223">            consulta.setTime(5,cita.getHorafin());</span>
+<span class="fc" id="L224">            consulta.setInt(6, cita.getIdcita());</span>
+<span class="fc" id="L225">            consulta.executeUpdate();</span>
+<span class="fc" id="L226">            return true;</span>
+<span class="nc" id="L227">        } catch (SQLException ex) {</span>
+<span class="nc" id="L228">            ex.printStackTrace();</span>
+<span class="nc" id="L229">            return false;</span>
         }
     }
-    
+    public Cita Get_Cita(Connection conexion,String id)throws SQLException
+    {
+       try {
+<span class="nc" id="L235">            PreparedStatement consulta = conexion.prepareStatement(&quot;SELECT * FROM Cita where idcita =  &quot;+id+&quot;;&quot;);</span>
+<span class="nc" id="L236">            ResultSet res = consulta.executeQuery();</span>
+
+        
+        
+<span class="nc" id="L240">            Cita cita = new Cita();</span>
+<span class="nc" id="L241">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
+<span class="nc" id="L242">            cita.setDoctor(res.getInt(&quot;doctor&quot;));</span>
+<span class="nc" id="L243">            cita.setPaciente(res.getInt(&quot;paciente&quot;));</span>
+<span class="nc" id="L244">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
+<span class="nc" id="L245">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
+<span class="nc" id="L246">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
+<span class="nc" id="L247">            return cita;</span>
+        
+<span class="nc" id="L249">       } catch (Exception e) {</span>
+<span class="nc" id="L250">           return null;</span>
+       }
+    }
     
     public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
     {
        try {
-<span class="nc" id="L219">            PreparedStatement consulta = conexion.prepareStatement(&quot;Delete * FROM Cita where idcita =  &quot;+id+&quot;;&quot;);</span>
-<span class="nc" id="L220">            consulta.setString(1,id);</span>
-<span class="nc" id="L221">            consulta.executeUpdate();</span>
-<span class="nc" id="L222">            return true;</span>
-<span class="fc" id="L223">       } catch (Exception e) {</span>
-<span class="fc" id="L224">           return false;</span>
+
+<span class="fc" id="L258">            PreparedStatement consulta = conexion.prepareStatement(&quot;Delete FROM Cita WHERE  idcita = &quot;+id+&quot;;&quot;);</span>
+
+<span class="fc" id="L260">            consulta.executeUpdate();</span>
+<span class="fc" id="L261">            return true;</span>
+<span class="nc" id="L262">       } catch (Exception e) {</span>
+<span class="nc" id="L263">           return false;</span>
        }
     }
     public LinkedList&lt;ReporteModel&gt; getReporte1(Connection conexion, String fecha) throws SQLException{
-<span class="fc" id="L228">        String sql=&quot;&quot;;</span>
+<span class="fc" id="L267">        String sql=&quot;&quot;;</span>
         PreparedStatement consulta;
-<span class="fc" id="L230">        ResultSet res=null;</span>
+<span class="fc" id="L269">        ResultSet res=null;</span>
         
-<span class="pc bpc" id="L232" title="1 of 2 branches missed.">        if((fecha.equals(&quot;ok&quot;))){</span>
-<span class="nc" id="L233">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n&quot; +</span>
+<span class="pc bpc" id="L271" title="1 of 2 branches missed.">        if((fecha.equals(&quot;ok&quot;))){</span>
+<span class="nc" id="L272">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n&quot; +</span>
                                                                 &quot;FROM Doctor d, Especialidad e,Paciente p, Cita c \n&quot; +
                                                                 &quot;WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente &quot;+
                                                                 &quot;;&quot;;
             
-<span class="nc" id="L238">            consulta= conexion.prepareStatement(sql);</span>
-<span class="nc" id="L239">            res = consulta.executeQuery();</span>
+<span class="nc" id="L277">            consulta= conexion.prepareStatement(sql);</span>
+<span class="nc" id="L278">            res = consulta.executeQuery();</span>
         }
         else {
-<span class="fc" id="L242">            Date fechabuscar=Date.valueOf(fecha);</span>
-<span class="fc" id="L243">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp\n&quot; +</span>
+<span class="fc" id="L281">            Date fechabuscar=Date.valueOf(fecha);</span>
+<span class="fc" id="L282">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp\n&quot; +</span>
                                                                 &quot;FROM Doctor d, Especialidad e,Paciente p, Cita c \n&quot; +
                                                                 &quot;WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente &quot;+
                                                                 &quot;AND c.fecha=? ;&quot;;
             
-<span class="fc" id="L248">            consulta= conexion.prepareStatement(sql);</span>
-<span class="fc" id="L249">            consulta.setDate(1,fechabuscar);</span>
-<span class="fc" id="L250">            res = consulta.executeQuery();</span>
+<span class="fc" id="L287">            consulta= conexion.prepareStatement(sql);</span>
+<span class="fc" id="L288">            consulta.setDate(1,fechabuscar);</span>
+<span class="fc" id="L289">            res = consulta.executeQuery();</span>
             
         }
-<span class="fc" id="L253">        LinkedList&lt;ReporteModel&gt; citas = new LinkedList&lt;&gt;();</span>
-<span class="fc bfc" id="L254" title="All 2 branches covered.">        while(res.next()){</span>
-<span class="fc" id="L255">            ReporteModel cita = new ReporteModel();</span>
-<span class="fc" id="L256">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
-<span class="fc" id="L257">            cita.setDoctor(res.getString(&quot;doctor&quot;));</span>
-<span class="fc" id="L258">            cita.setPaciente(res.getString(&quot;paciente&quot;));</span>
-<span class="fc" id="L259">            cita.setCorreo(res.getString(&quot;correo&quot;));</span>
-<span class="fc" id="L260">            cita.setEspecialidad(res.getString(&quot;esp&quot;));</span>
-<span class="fc" id="L261">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
-<span class="fc" id="L262">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
-<span class="fc" id="L263">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
-<span class="fc" id="L264">            citas.add(cita);</span>
-<span class="fc" id="L265">        }</span>
+<span class="fc" id="L292">        LinkedList&lt;ReporteModel&gt; citas = new LinkedList&lt;&gt;();</span>
+<span class="pc bpc" id="L293" title="1 of 2 branches missed.">        while(res.next()){</span>
+<span class="nc" id="L294">            ReporteModel cita = new ReporteModel();</span>
+<span class="nc" id="L295">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
+<span class="nc" id="L296">            cita.setDoctor(res.getString(&quot;doctor&quot;));</span>
+<span class="nc" id="L297">            cita.setPaciente(res.getString(&quot;paciente&quot;));</span>
+<span class="nc" id="L298">            cita.setCorreo(res.getString(&quot;correo&quot;));</span>
+<span class="nc" id="L299">            cita.setEspecialidad(res.getString(&quot;esp&quot;));</span>
+<span class="nc" id="L300">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
+<span class="nc" id="L301">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
+<span class="nc" id="L302">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
+<span class="nc" id="L303">            citas.add(cita);</span>
+<span class="nc" id="L304">        }</span>
         
-<span class="fc" id="L267">        return citas;</span>
+<span class="fc" id="L306">        return citas;</span>
     }
     
     public LinkedList&lt;ReporteModel&gt; getReporte2(Connection conexion, int buscar, int tipo) throws SQLException{
         PreparedStatement consulta;
-<span class="fc" id="L272">        ResultSet res=null;</span>
-<span class="fc" id="L273">        String sql=&quot;&quot;;</span>
-<span class="pc bpc" id="L274" title="1 of 2 branches missed.">        if(tipo==1){</span>
-<span class="nc" id="L275">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n&quot; +</span>
+<span class="fc" id="L311">        ResultSet res=null;</span>
+<span class="fc" id="L312">        String sql=&quot;&quot;;</span>
+<span class="pc bpc" id="L313" title="1 of 2 branches missed.">        if(tipo==1){</span>
+<span class="nc" id="L314">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n&quot; +</span>
                                                                 &quot;FROM Doctor d, Especialidad e,Paciente p, Cita c \n&quot; +
                                                                 &quot;WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente &quot;+
                                                                 &quot;AND c.paciente=? ;&quot;;
             
-<span class="nc" id="L280">            consulta= conexion.prepareStatement(sql);</span>
-<span class="nc" id="L281">            consulta.setInt(1,buscar);</span>
-<span class="nc" id="L282">            res = consulta.executeQuery();</span>
+<span class="nc" id="L319">            consulta= conexion.prepareStatement(sql);</span>
+<span class="nc" id="L320">            consulta.setInt(1,buscar);</span>
+<span class="nc" id="L321">            res = consulta.executeQuery();</span>
         }
         else {
-<span class="fc" id="L285">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp\n&quot; +</span>
+<span class="fc" id="L324">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp\n&quot; +</span>
                                                                 &quot;FROM Doctor d, Especialidad e,Paciente p, Cita c \n&quot; +
                                                                 &quot;WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente &quot;+
                                                                 &quot;AND c.doctor=? ;&quot;;
             
-<span class="nc" id="L290">            consulta= conexion.prepareStatement(sql);</span>
-<span class="nc" id="L291">            consulta.setInt(1,buscar);</span>
-<span class="nc" id="L292">            res = consulta.executeQuery();</span>
+<span class="fc" id="L329">            consulta= conexion.prepareStatement(sql);</span>
+<span class="fc" id="L330">            consulta.setInt(1,buscar);</span>
+<span class="fc" id="L331">            res = consulta.executeQuery();</span>
             
         }
         
 
-<span class="nc" id="L297">        LinkedList&lt;ReporteModel&gt; citas = new LinkedList&lt;&gt;();</span>
-<span class="nc bnc" id="L298" title="All 2 branches missed.">        while(res.next()){</span>
-<span class="nc" id="L299">            ReporteModel cita = new ReporteModel();</span>
-<span class="nc" id="L300">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
-<span class="nc" id="L301">            cita.setDoctor(res.getString(&quot;doctor&quot;));</span>
-<span class="nc" id="L302">            cita.setPaciente(res.getString(&quot;paciente&quot;));</span>
-<span class="nc" id="L303">            cita.setCorreo(res.getString(&quot;correo&quot;));</span>
-<span class="nc" id="L304">            cita.setEspecialidad(res.getString(&quot;esp&quot;));</span>
-<span class="nc" id="L305">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
-<span class="nc" id="L306">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
-<span class="nc" id="L307">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
-<span class="nc" id="L308">            citas.add(cita);</span>
-<span class="nc" id="L309">        }</span>
+<span class="fc" id="L336">        LinkedList&lt;ReporteModel&gt; citas = new LinkedList&lt;&gt;();</span>
+<span class="fc bfc" id="L337" title="All 2 branches covered.">        while(res.next()){</span>
+<span class="fc" id="L338">            ReporteModel cita = new ReporteModel();</span>
+<span class="fc" id="L339">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
+<span class="fc" id="L340">            cita.setDoctor(res.getString(&quot;doctor&quot;));</span>
+<span class="fc" id="L341">            cita.setPaciente(res.getString(&quot;paciente&quot;));</span>
+<span class="fc" id="L342">            cita.setCorreo(res.getString(&quot;correo&quot;));</span>
+<span class="fc" id="L343">            cita.setEspecialidad(res.getString(&quot;esp&quot;));</span>
+<span class="fc" id="L344">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
+<span class="fc" id="L345">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
+<span class="fc" id="L346">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
+<span class="fc" id="L347">            citas.add(cita);</span>
+<span class="fc" id="L348">        }</span>
         
-<span class="nc" id="L311">        return citas;</span>
+<span class="fc" id="L350">        return citas;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

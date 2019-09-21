@@ -9,10 +9,10 @@ import java.sql.Date;
 import java.sql.Time;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -46,7 +46,7 @@ public class CitaTest {
     public void testGetIdcita() {
         System.out.println("getIdcita");
         Cita instance = new Cita();
-        int expResult = 0;
+        int expResult = -1;
         int result = instance.getIdcita();
         assertEquals(expResult, result);
     }
@@ -57,7 +57,7 @@ public class CitaTest {
     @Test
     public void testSetIdcita() {
         System.out.println("setIdcita");
-        int idcita = 0;
+        int idcita = -1;
         Cita instance = new Cita();
         instance.setIdcita(idcita);
         assertEquals(idcita, instance.getIdcita());
@@ -70,7 +70,7 @@ public class CitaTest {
     public void testGetDoctor() {
         System.out.println("getDoctor");
         Cita instance = new Cita();
-        int expResult = 0;
+        int expResult = -1;
         int result = instance.getDoctor();
         assertEquals(expResult, result);
         
@@ -96,7 +96,7 @@ public class CitaTest {
     public void testGetPaciente() {
         System.out.println("getPaciente");
         Cita instance = new Cita();
-        int expResult = 0;
+        int expResult = -1;
         int result = instance.getPaciente();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -204,7 +204,9 @@ public class CitaTest {
     public void testToString() {
         System.out.println("toString");
         Cita instance = new Cita();
-        String expResult = "";
+        instance.setIdcita(1);
+        instance.setFecha(new java.sql.Date(119, 8, 21));
+        String expResult = "1 - 2019-09-21";
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

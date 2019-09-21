@@ -390,6 +390,9 @@
               </AuxValues>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="fechaCitaMod">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+              </AuxValues>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
               <AuxValues>
@@ -399,6 +402,9 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Component class="javax.swing.JTextPane" name="tp_horaIniMod">
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -410,6 +416,9 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Component class="javax.swing.JTextPane" name="tp_horaFinMod">
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

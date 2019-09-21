@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="1" hostname="FHER" name="service.ConsultasTest" skipped="0" tests="13" time="0.652" timestamp="2019-09-21T09:04:11">
+<testsuite errors="0" failures="0" hostname="FHER" name="practica2.LoginTest" skipped="0" tests="2" time="14.014" timestamp="2019-09-21T09:03:47">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -60,7 +60,7 @@
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="ant.project.default-target" value="default" />
     <property name="javac.profile.cmd.line.arg" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner service.ConsultasTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\test\results\TEST-service.ConsultasTest.xml crashfile=C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\junitvmwatcher6707336327478782256.properties propsfile=C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\junit8160090763343909484.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner practica2.LoginTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\test\results\TEST-practica2.LoginTest.xml crashfile=C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\junitvmwatcher3280560913467269291.properties propsfile=C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\junit1110442871905163805.properties" />
     <property name="https.nonProxyHosts" value="localhost|127.0.0.1|FHER" />
     <property name="built-jar.properties" value="C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\built-jar.properties" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -80,8 +80,8 @@
     <property name="javadoc.private" value="false" />
     <property name="annotation.processing.processors.list" value="" />
     <property name="sun.desktop" value="windows" />
-    <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="test.binaryexcludes" value="" />
     <property name="netbeans.dynamic.classpath" value="C:\Program Files\NetBeans 8.2\platform\core\asm-all-5.0.1.jar;C:\Program Files\NetBeans 8.2\platform\core\core-base.jar;C:\Program Files\NetBeans 8.2\platform\core\core.jar;C:\Program Files\NetBeans 8.2\platform\core\org-netbeans-libs-asm.jar;C:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems-compat8.jar;C:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_de.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_es.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_fr.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_it.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ar_SA.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_bg.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ca.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_cs.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_de.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_es.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_fr.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_gl_ES.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_in_ID.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_it.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ko.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_nl_NL.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_pl.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_pt_PT.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ro.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_si.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_sq.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_sv.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_tr.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_zh_TW.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_de.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_es.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_fr.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_it.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_de.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_es.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_fr.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_it.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ar_SA.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_bg.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ca.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_cs.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_de.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_es.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_fr.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_gl_ES.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_in_ID.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_it.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ko.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_nl_NL.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_pl.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_pt_PT.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ro.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_si.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_sq.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_sv.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_tr.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_zh_TW.jar;C:\Program Files\NetBeans 8.2\nb\core\org-netbeans-upgrader.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ca.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_de.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_es.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_fr.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_gl_ES.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_it.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ko.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_nl_NL.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_sv.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_tr.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_zh_TW.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ca.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_de.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_es.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_fr.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_gl_ES.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_it.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ko.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_nl_NL.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_sv.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_tr.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_zh_TW.jar" />
     <property name="platform.active" value="default_platform" />
@@ -146,9 +146,9 @@
     <property name="run.jvmargs.ide" value="" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="file.reference.itextpdf-5.4.3.jar-1" value="jars\itextpdf-5.4.3.jar" />
-    <property name="nb.junit.single" value="false" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
     <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\ferhj\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\jacoco.exec-479104237177100&quot;" />
+    <property name="nb.junit.single" value="false" />
     <property name="build.compiler.emacs" value="true" />
     <property name="file.reference.mysql-connector-java-5.1.48.jar" value="jars\mysql-connector-java-5.1.48.jar" />
     <property name="file.reference.jcalendar-1.4.jar" value="jars/jcalendar-1.4.jar" />
@@ -177,16 +177,15 @@
     <property name="netbeans.automatic.build" value="true" />
     <property name="test.binaryincludes" value="&lt;nothing&gt;" />
     <property name="java.vm.version" value="25.162-b12" />
-    <property name="annotation.processing.processor.options" value="" />
     <property name="java.class.path" value="C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\jars\JTattoo-1.6.11.jar;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\jars\mysql-connector-java-5.1.48.jar;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\jars\jcalendar-1.4.jar;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\jars\junit-4.10.jar;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\jars\itextpdf-5.4.3.jar;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\classes;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build\test\classes;C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2;C:\PROGRA~2\JMF2.1.1e\lib\sound.jar;C:\PROGRA~2\JMF2.1.1e\lib\jmf.jar;C:\PROGRA~2\JMF2.1.1e\lib;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit4.jar;C:\Users\ferhj\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar" />
-    <property name="tests.failed" value="true" />
+    <property name="annotation.processing.processor.options" value="" />
     <property name="os.arch" value="amd64" />
     <property name="javac.deprecation" value="false" />
     <property name="manifest.encoding" value="UTF-8" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="dist.dir" value="dist" />
-    <property name="netbeans.user" value="C:\Users\ferhj\AppData\Roaming\NetBeans\8.2" />
     <property name="debug.classpath" value="jars\JTattoo-1.6.11.jar:jars\mysql-connector-java-5.1.48.jar:jars/jcalendar-1.4.jar:jars\junit-jupiter-5.5.2.jar:jars\junit-4.10.jar:C:\Users\Oscar\Documents\USAC\IPC\IPC\Proyecto2\itextpdf-5.4.3.jar:jars\itextpdf-5.4.3.jar:build/classes" />
+    <property name="netbeans.user" value="C:\Users\ferhj\AppData\Roaming\NetBeans\8.2" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="jar.index.metainf" value="false" />
     <property name="platform.java" value="C:\Program Files\Java\jdk1.8.0_162\jre/bin/java" />
@@ -196,8 +195,8 @@
     <property name="do.depend" value="false" />
     <property name="file.separator" value="\" />
     <property name="java.runtime.version" value="1.8.0_162-b12" />
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_162\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_162\jre\classes" />
     <property name="debug.test.classpath" value="jars\JTattoo-1.6.11.jar:jars\mysql-connector-java-5.1.48.jar:jars/jcalendar-1.4.jar:jars\junit-jupiter-5.5.2.jar:jars\junit-4.10.jar:C:\Users\Oscar\Documents\USAC\IPC\IPC\Proyecto2\itextpdf-5.4.3.jar:jars\itextpdf-5.4.3.jar:build/classes:build/test/classes" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_162\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_162\jre\classes" />
     <property name="nb.junit.batch" value="true" />
     <property name="have.tests" value="true" />
     <property name="main.class" value="practica2.Practica2" />
@@ -207,99 +206,28 @@
     <property name="jdk.launcher.addexports.3" value="java.desktop/sun.awt.im=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.2" value="java.desktop/java.awt.peer=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.1" value="java.base/jdk.internal.jrtfs=ALL-UNNAMED" />
-    <property name="jdk.launcher.addexports.0" value="java.desktop/sun.awt=ALL-UNNAMED" />
     <property name="user.country" value="GT" />
+    <property name="jdk.launcher.addexports.0" value="java.desktop/sun.awt=ALL-UNNAMED" />
     <property name="javadoc.notree" value="false" />
-    <property name="javadoc.additionalparam" value="" />
+    <property name="default.javac.target" value="1.6" />
     <property name="javac.classpath" value="jars\JTattoo-1.6.11.jar:jars\mysql-connector-java-5.1.48.jar:jars/jcalendar-1.4.jar:jars\junit-jupiter-5.5.2.jar:jars\junit-4.10.jar:C:\Users\Oscar\Documents\USAC\IPC\IPC\Proyecto2\itextpdf-5.4.3.jar:jars\itextpdf-5.4.3.jar" />
     <property name="ant.file.Practica2" value="C:\Users\ferhj\Desktop\-AyD1-Practica2\Practica2\build.xml" />
-    <property name="default.javac.target" value="1.6" />
+    <property name="javadoc.additionalparam" value="" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="do.archive+manifest.available" value="true" />
-    <property name="javac.target" value="1.8" />
     <property name="java.vendor" value="Oracle Corporation" />
+    <property name="javac.target" value="1.8" />
     <property name="runtime.encoding" value="UTF-8" />
     <property name="java.specification.version" value="1.8" />
     <property name="sun.arch.data.model" value="64" />
     <property name="mkdist.disabled" value="false" />
   </properties>
-  <testcase classname="service.ConsultasTest" name="testGetDoctorPorId" time="0.292" />
-  <testcase classname="service.ConsultasTest" name="testModificarCita" time="0.075" />
-  <testcase classname="service.ConsultasTest" name="testGetPacientePorId" time="0.01" />
-  <testcase classname="service.ConsultasTest" name="testEliminar_Cita" time="0.006" />
-  <testcase classname="service.ConsultasTest" name="testGetDoctores" time="0.007" />
-  <testcase classname="service.ConsultasTest" name="testGetPacientes" time="0.008" />
-  <testcase classname="service.ConsultasTest" name="testGetReporte1" time="0.007">
-    <error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at service.ConsultasTest.testGetReporte1(ConsultasTest.java:225)
-</error>
-  </testcase>
-  <testcase classname="service.ConsultasTest" name="testCrearCita" time="0.06" />
-  <testcase classname="service.ConsultasTest" name="testLogin" time="0.004" />
-  <testcase classname="service.ConsultasTest" name="testGetCitas" time="0.008" />
-  <testcase classname="service.ConsultasTest" name="testGetCitasid" time="0.005" />
-  <testcase classname="service.ConsultasTest" name="testGetReporte2" time="0.01">
-    <failure message="expected:&lt;[]&gt; but was:&lt;[1 - 2019-09-17, 2 - 3911-12-27, 3 - 3911-12-27, 4 - 3911-12-27, 5 - 3911-12-27, 6 - 3911-12-27, 7 - 3911-12-27, 8 - 3911-12-27, 9 - 3911-12-27, 10 - 3911-12-27, 11 - 3911-12-27, 12 - 3911-12-27, 14 - 3911-12-27, 15 - 3911-12-27, 16 - 3911-12-27, 17 - 3911-12-27, 18 - 3911-12-27, 19 - 3911-12-27, 20 - 3911-12-27, 21 - 3911-12-27, 22 - 3911-12-27, 23 - 3911-12-27]&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;[]&gt; but was:&lt;[1 - 2019-09-17, 2 - 3911-12-27, 3 - 3911-12-27, 4 - 3911-12-27, 5 - 3911-12-27, 6 - 3911-12-27, 7 - 3911-12-27, 8 - 3911-12-27, 9 - 3911-12-27, 10 - 3911-12-27, 11 - 3911-12-27, 12 - 3911-12-27, 14 - 3911-12-27, 15 - 3911-12-27, 16 - 3911-12-27, 17 - 3911-12-27, 18 - 3911-12-27, 19 - 3911-12-27, 20 - 3911-12-27, 21 - 3911-12-27, 22 - 3911-12-27, 23 - 3911-12-27]&gt;
-	at service.ConsultasTest.testGetReporte2(ConsultasTest.java:242)
-</failure>
-  </testcase>
-  <testcase classname="service.ConsultasTest" name="testRegistrar" time="0.027" />
-  <system-out><![CDATA[Inicia el test de la clase Consultas
-Inicia el test del metodo ...
-getDoctorPorId
+  <testcase classname="practica2.LoginTest" name="testLogAction" time="13.944" />
+  <testcase classname="practica2.LoginTest" name="testMain" time="0.013" />
+  <system-out><![CDATA[logAction
 Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-modificarCita
 Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getPacientePorId
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-Eliminar_Cita
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getDoctores
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getPacientes
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getReporte1
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-crearCita
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-login
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getCitas
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getCitasid
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getReporte2
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-registrar
-Conexion Establecida
-Finaliza el test del metodo ...
-Finaliza el test de la clase Consultas
+main
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

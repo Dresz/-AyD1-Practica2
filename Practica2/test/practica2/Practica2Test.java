@@ -10,7 +10,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -45,7 +44,7 @@ public class Practica2Test {
         System.out.println("main");
         String[] args = null;
         Practica2.main(args);
-      
+        //Practica2 p2 = new Practica2();
     }
     
 }

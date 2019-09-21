@@ -5,16 +5,18 @@
  */
 package practica2;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.LinkedList;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -111,11 +113,17 @@ public class PrincipalTest {
     @Test
     public void testSetDatosCita() throws Exception {
         System.out.println("setDatosCita");
-        Cita cita = null;
+        Cita cita = new Cita();
+        cita.setIdcita(1);
+        cita.setDoctor(1);
+        cita.setPaciente(1);
+        cita.setFecha(new Date(119,8,22));
+        cita.setHorainicio(new Time(1,10,10));
+        cita.setHorafin(new Time(1,10,10));
         Principal instance = new Principal();
-        boolean expResult = false;
-        Object result = instance.setDatosCita(cita);
-        assertEquals(cita, result);
+        instance.actualizarModAction();
+        boolean result = instance.setDatosCita(cita);
+        assertTrue(result);
        
     }
 
@@ -154,11 +162,16 @@ public class PrincipalTest {
     public void testGetCitaMod() {
         System.out.println("getCitaMod");
         Principal instance = new Principal();
-        Cita expResult = null;
+        instance.actualizarModAction();
         Cita result = instance.getCitaMod();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        assertNull(result);
         
+        instance.tp_horaIniMod.setText("00:00");
+        instance.tp_horaFinMod.setText("00:00");
+        instance.fechaCitaMod.setDateFormatString("2019-09-22");
+        result = instance.getCitaMod();
+        assertNotNull(result);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
@@ -168,9 +181,15 @@ public class PrincipalTest {
     public void testActualizarCita() {
         System.out.println("actualizarCita");
         Principal instance = new Principal();
-        Object expResult = null;
-        Object result = instance.actualizarCita();
-        assertEquals(expResult, result);
+        instance.actualizarModAction();
+        boolean result = instance.actualizarCita();
+        assertFalse(result);
+        
+        instance.tp_horaIniMod.setText("00:00");
+        instance.tp_horaFinMod.setText("00:00");
+        instance.fechaCitaMod.setDateFormatString("2019-09-22");
+        result = instance.actualizarCita();
+        assertTrue(result);
         // TODO review the generated test code and remove the default call to fail.
         
     }

@@ -13,10 +13,10 @@ import models.Paciente;
 import models.ReporteModel;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -51,8 +51,10 @@ public class ReportesTest {
         System.out.println("main");
         String[] args = null;
         Reportes.main(args);
+        Reportes rep = new Reportes();
+        assertNotNull(rep);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -61,14 +63,14 @@ public class ReportesTest {
     @Test
     public void testSetReporte() {
         System.out.println("setReporte");
-        LinkedList<ReporteModel> reportes = null;
-        DefaultTableModel tabla = null;
+        LinkedList<ReporteModel> reportes = new LinkedList<>();
+        DefaultTableModel tabla = new DefaultTableModel();
         Reportes instance = new Reportes();
         boolean expResult = true;
         boolean result = instance.setReporte(reportes, tabla);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -79,11 +81,15 @@ public class ReportesTest {
         System.out.println("setPaciente");
         LinkedList<Paciente> pacientes = null;
         Reportes instance = new Reportes();
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.setPaciente(pacientes);
         assertEquals(expResult, result);
+        
+        pacientes = new LinkedList<>();
+        result = instance.setPaciente(pacientes);
+        assertTrue(result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -94,11 +100,15 @@ public class ReportesTest {
         System.out.println("setDoctores");
         LinkedList<Doctor> doctores = null;
         Reportes instance = new Reportes();
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.setDoctores(doctores);
         assertEquals(expResult, result);
+        
+        doctores = new LinkedList<>();
+        result = instance.setDoctores(doctores);
+        assertTrue(result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -107,16 +117,21 @@ public class ReportesTest {
     @Test
     public void testGenerarPDF() throws Exception {
         System.out.println("generarPDF");
-        String nombre = "";
-        String ubicacion = "";
-        JTable tabla = new JTable();
-        String titulo = "";
+        String nombre = "abc";
+        String ubicacion = ".";
+        String[][] data = { 
+            { "Kundan Kumar Jha", "4031", "CSE" }, 
+            { "Anand Jha", "6014", "IT" } 
+        }; 
+        String[] columnNames = { "Name", "Roll Number", "Department" }; 
+        JTable tabla = new JTable(data, columnNames);
+        String titulo = "rep";
         Reportes instance = new Reportes();
         boolean expResult = true;
         boolean result = instance.generarPDF(nombre, ubicacion, tabla, titulo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

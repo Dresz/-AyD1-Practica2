@@ -87,6 +87,8 @@ public class ReporteModel {
     
     @Override
     public String toString() {
+        if (this.fecha == null)
+            return "";
         return "" + this.getIdcita() + " - " + this.fecha.toString();
     }
 }
