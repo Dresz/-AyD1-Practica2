@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="9" hostname="Corleto" name="models.DoctorTest" skipped="0" tests="9" time="0.082" timestamp="2019-09-21T01:42:27">
+<testsuite errors="0" failures="9" hostname="Corleto" name="models.DoctorTest" skipped="0" tests="9" time="0.088" timestamp="2019-09-21T04:15:48">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -60,7 +60,7 @@
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="ant.project.default-target" value="default" />
     <property name="javac.profile.cmd.line.arg" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner models.DoctorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-models.DoctorTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher6727400208870394831.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit8929867600869522859.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner models.DoctorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-models.DoctorTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher168652813164624623.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit6434730654458527256.properties" />
     <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Corleto" />
     <property name="built-jar.properties" value="C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\built-jar.properties" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -101,7 +101,7 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="netbeans.home" value="C:\Program Files\NetBeans 8.2\platform" />
     <property name="javadoc.nonavbar" value="false" />
-    <property name="user.properties.file" value="C:\Users\Luis\AppData\Roaming\NetBeans\8.1\build.properties" />
+    <property name="user.properties.file" value="C:\Users\hp\AppData\Roaming\NetBeans\8.2\build.properties" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="javac.external.vm" value="true" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -146,7 +146,7 @@
     <property name="netbeans.productversion" value="NetBeans IDE 8.2 (Build 201609300101)" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="run.jvmargs.ide" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-621853672724667&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-631050046488534&quot;" />
     <property name="nb.junit.single" value="false" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
     <property name="build.compiler.emacs" value="true" />
@@ -231,17 +231,12 @@
 	at models.DoctorTest.testSetEspecialidad(DoctorTest.java:118)
 </failure>
   </testcase>
-  <testcase classname="models.DoctorTest" name="testGetIddoctor" time="0.001">
-    <failure message="expected:&lt;0&gt; but was:&lt;-1&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;0&gt; but was:&lt;-1&gt;
-	at models.DoctorTest.testGetIddoctor(DoctorTest.java:49)
-</failure>
-  </testcase>
-  <testcase classname="models.DoctorTest" name="testToString" time="0.002">
+  <testcase classname="models.DoctorTest" name="testToString" time="0.003">
     <failure message="expected:&lt;[]&gt; but was:&lt;[ - ]&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;[]&gt; but was:&lt;[ - ]&gt;
 	at models.DoctorTest.testToString(DoctorTest.java:157)
 </failure>
   </testcase>
-  <testcase classname="models.DoctorTest" name="testGetTelefono" time="0.001">
+  <testcase classname="models.DoctorTest" name="testGetTelefono" time="0.002">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
 	at models.DoctorTest.testGetTelefono(DoctorTest.java:132)
 </failure>
@@ -251,12 +246,7 @@
 	at models.DoctorTest.testSetIddoctor(DoctorTest.java:64)
 </failure>
   </testcase>
-  <testcase classname="models.DoctorTest" name="testGetNombre" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.DoctorTest.testGetNombre(DoctorTest.java:78)
-</failure>
-  </testcase>
-  <testcase classname="models.DoctorTest" name="testSetTelefono" time="0.001">
+  <testcase classname="models.DoctorTest" name="testSetTelefono" time="0.002">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
 	at models.DoctorTest.testSetTelefono(DoctorTest.java:145)
 </failure>
@@ -266,15 +256,25 @@
 	at models.DoctorTest.testSetNombre(DoctorTest.java:91)
 </failure>
   </testcase>
+  <testcase classname="models.DoctorTest" name="testGetIddoctor" time="0.001">
+    <failure message="expected:&lt;0&gt; but was:&lt;-1&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;0&gt; but was:&lt;-1&gt;
+	at models.DoctorTest.testGetIddoctor(DoctorTest.java:49)
+</failure>
+  </testcase>
+  <testcase classname="models.DoctorTest" name="testGetNombre" time="0.001">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at models.DoctorTest.testGetNombre(DoctorTest.java:78)
+</failure>
+  </testcase>
   <system-out><![CDATA[getEspecialidad
 setEspecialidad
-getIddoctor
 toString
 getTelefono
 setIddoctor
-getNombre
 setTelefono
 setNombre
+getIddoctor
+getNombre
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

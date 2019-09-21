@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="3" hostname="Corleto" name="practica2.ReportesTest" skipped="0" tests="4" time="0.875" timestamp="2019-09-21T01:40:40">
+<testsuite errors="2" failures="3" hostname="Corleto" name="practica2.ReportesTest" skipped="0" tests="5" time="1.652" timestamp="2019-09-21T04:15:50">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -60,7 +60,7 @@
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="ant.project.default-target" value="default" />
     <property name="javac.profile.cmd.line.arg" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner practica2.ReportesTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-practica2.ReportesTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher5342442891945264822.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit1120143132409854662.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner practica2.ReportesTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-practica2.ReportesTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher1639457619494970599.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit5073649569056346452.properties" />
     <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Corleto" />
     <property name="built-jar.properties" value="C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\built-jar.properties" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -101,7 +101,7 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="netbeans.home" value="C:\Program Files\NetBeans 8.2\platform" />
     <property name="javadoc.nonavbar" value="false" />
-    <property name="user.properties.file" value="C:\Users\Luis\AppData\Roaming\NetBeans\8.1\build.properties" />
+    <property name="user.properties.file" value="C:\Users\hp\AppData\Roaming\NetBeans\8.2\build.properties" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="javac.external.vm" value="true" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -146,7 +146,7 @@
     <property name="netbeans.productversion" value="NetBeans IDE 8.2 (Build 201609300101)" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="run.jvmargs.ide" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-621743484077593&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-631050046488534&quot;" />
     <property name="nb.junit.single" value="false" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
     <property name="build.compiler.emacs" value="true" />
@@ -221,35 +221,42 @@
     <property name="sun.arch.data.model" value="64" />
     <property name="mkdist.disabled" value="false" />
   </properties>
-  <testcase classname="practica2.ReportesTest" name="testGenerarPDF" time="0.466">
-    <error message="\prueba.pdf (Acceso denegado)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: \prueba.pdf (Acceso denegado)
+  <testcase classname="practica2.ReportesTest" name="testMain" time="0.442">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at practica2.ReportesTest.testMain(ReportesTest.java:55)
+</failure>
+  </testcase>
+  <testcase classname="practica2.ReportesTest" name="testSetReporte" time="0.458">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at practica2.Reportes.setReporte(Reportes.java:569)
+	at practica2.ReportesTest.testSetReporte(ReportesTest.java:68)
+</error>
+  </testcase>
+  <testcase classname="practica2.ReportesTest" name="testSetPaciente" time="0.263">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
+	at practica2.ReportesTest.testSetPaciente(ReportesTest.java:84)
+</failure>
+  </testcase>
+  <testcase classname="practica2.ReportesTest" name="testSetDoctores" time="0.048">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
+	at practica2.ReportesTest.testSetDoctores(ReportesTest.java:99)
+</failure>
+  </testcase>
+  <testcase classname="practica2.ReportesTest" name="testGenerarPDF" time="0.378">
+    <error message="\.pdf (Acceso denegado)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: \.pdf (Acceso denegado)
 	at java.io.FileOutputStream.open0(Native Method)
 	at java.io.FileOutputStream.open(FileOutputStream.java:270)
 	at java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:213)
 	at java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:101)
 	at practica2.Reportes.generarPDF(Reportes.java:603)
-	at practica2.ReportesTest.testGenerarPDF(ReportesTest.java:105)
+	at practica2.ReportesTest.testGenerarPDF(ReportesTest.java:116)
 </error>
   </testcase>
-  <testcase classname="practica2.ReportesTest" name="testSetPaciente" time="0.055">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at practica2.ReportesTest.testSetPaciente(ReportesTest.java:75)
-</failure>
-  </testcase>
-  <testcase classname="practica2.ReportesTest" name="testMain" time="0.05">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at practica2.ReportesTest.testMain(ReportesTest.java:55)
-</failure>
-  </testcase>
-  <testcase classname="practica2.ReportesTest" name="testSetDoctores" time="0.232">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at practica2.ReportesTest.testSetDoctores(ReportesTest.java:90)
-</failure>
-  </testcase>
-  <system-out><![CDATA[generarPDF
+  <system-out><![CDATA[main
+setReporte
 setPaciente
-main
 setDoctores
+generarPDF
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

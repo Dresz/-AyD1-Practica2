@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="16" hostname="Corleto" name="models.ReporteModelTest" skipped="0" tests="17" time="0.116" timestamp="2019-09-21T01:42:28">
+<testsuite errors="1" failures="16" hostname="Corleto" name="models.ReporteModelTest" skipped="0" tests="17" time="0.135" timestamp="2019-09-21T04:15:49">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -60,7 +60,7 @@
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="ant.project.default-target" value="default" />
     <property name="javac.profile.cmd.line.arg" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner models.ReporteModelTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-models.ReporteModelTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher8925667854911880839.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit3721967519741865280.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner models.ReporteModelTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-models.ReporteModelTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher7100804015904577665.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit1164263026156526929.properties" />
     <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Corleto" />
     <property name="built-jar.properties" value="C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\built-jar.properties" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -101,7 +101,7 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="netbeans.home" value="C:\Program Files\NetBeans 8.2\platform" />
     <property name="javadoc.nonavbar" value="false" />
-    <property name="user.properties.file" value="C:\Users\Luis\AppData\Roaming\NetBeans\8.1\build.properties" />
+    <property name="user.properties.file" value="C:\Users\hp\AppData\Roaming\NetBeans\8.2\build.properties" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="javac.external.vm" value="true" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -146,7 +146,7 @@
     <property name="netbeans.productversion" value="NetBeans IDE 8.2 (Build 201609300101)" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="run.jvmargs.ide" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-621853672724667&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-631050046488534&quot;" />
     <property name="nb.junit.single" value="false" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
     <property name="build.compiler.emacs" value="true" />
@@ -221,34 +221,14 @@
     <property name="sun.arch.data.model" value="64" />
     <property name="mkdist.disabled" value="false" />
   </properties>
-  <testcase classname="models.ReporteModelTest" name="testSetEspecialidad" time="0.006">
+  <testcase classname="models.ReporteModelTest" name="testGetHorafin" time="0.009">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testSetEspecialidad(ReporteModelTest.java:174)
+	at models.ReporteModelTest.testGetHorafin(ReporteModelTest.java:242)
 </failure>
   </testcase>
-  <testcase classname="models.ReporteModelTest" name="testSetHorainicio" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testSetHorainicio(ReporteModelTest.java:228)
-</failure>
-  </testcase>
-  <testcase classname="models.ReporteModelTest" name="testGetHorainicio" time="0.004">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testGetHorainicio(ReporteModelTest.java:215)
-</failure>
-  </testcase>
-  <testcase classname="models.ReporteModelTest" name="testGetEspecialidad" time="0.001">
+  <testcase classname="models.ReporteModelTest" name="testGetCorreo" time="0.001">
     <failure message="expected:&lt;&gt; but was:&lt;null&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;&gt; but was:&lt;null&gt;
-	at models.ReporteModelTest.testGetEspecialidad(ReporteModelTest.java:159)
-</failure>
-  </testcase>
-  <testcase classname="models.ReporteModelTest" name="testSetPaciente" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testSetPaciente(ReporteModelTest.java:120)
-</failure>
-  </testcase>
-  <testcase classname="models.ReporteModelTest" name="testSetHorafin" time="0.002">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testSetHorafin(ReporteModelTest.java:255)
+	at models.ReporteModelTest.testGetCorreo(ReporteModelTest.java:132)
 </failure>
   </testcase>
   <testcase classname="models.ReporteModelTest" name="testGetIdcita" time="0.001">
@@ -256,34 +236,29 @@
 	at models.ReporteModelTest.testGetIdcita(ReporteModelTest.java:53)
 </failure>
   </testcase>
-  <testcase classname="models.ReporteModelTest" name="testGetHorafin" time="0.002">
+  <testcase classname="models.ReporteModelTest" name="testSetFecha" time="0.0">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testGetHorafin(ReporteModelTest.java:242)
+	at models.ReporteModelTest.testSetFecha(ReporteModelTest.java:201)
 </failure>
   </testcase>
-  <testcase classname="models.ReporteModelTest" name="testSetIdcita" time="0.002">
+  <testcase classname="models.ReporteModelTest" name="testSetHorafin" time="0.001">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at models.ReporteModelTest.testSetHorafin(ReporteModelTest.java:255)
+</failure>
+  </testcase>
+  <testcase classname="models.ReporteModelTest" name="testSetIdcita" time="0.001">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
 	at models.ReporteModelTest.testSetIdcita(ReporteModelTest.java:66)
 </failure>
   </testcase>
-  <testcase classname="models.ReporteModelTest" name="testGetDoctor" time="0.001">
+  <testcase classname="models.ReporteModelTest" name="testGetDoctor" time="0.002">
     <failure message="expected:&lt;&gt; but was:&lt;null&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;&gt; but was:&lt;null&gt;
 	at models.ReporteModelTest.testGetDoctor(ReporteModelTest.java:78)
 </failure>
   </testcase>
-  <testcase classname="models.ReporteModelTest" name="testGetPaciente" time="0.002">
-    <failure message="expected:&lt;&gt; but was:&lt;null&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;&gt; but was:&lt;null&gt;
-	at models.ReporteModelTest.testGetPaciente(ReporteModelTest.java:105)
-</failure>
-  </testcase>
-  <testcase classname="models.ReporteModelTest" name="testGetCorreo" time="0.002">
-    <failure message="expected:&lt;&gt; but was:&lt;null&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;&gt; but was:&lt;null&gt;
-	at models.ReporteModelTest.testGetCorreo(ReporteModelTest.java:132)
-</failure>
-  </testcase>
-  <testcase classname="models.ReporteModelTest" name="testSetDoctor" time="0.001">
+  <testcase classname="models.ReporteModelTest" name="testSetPaciente" time="0.001">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testSetDoctor(ReporteModelTest.java:93)
+	at models.ReporteModelTest.testSetPaciente(ReporteModelTest.java:120)
 </failure>
   </testcase>
   <testcase classname="models.ReporteModelTest" name="testToString" time="0.001">
@@ -292,38 +267,63 @@
 	at models.ReporteModelTest.testToString(ReporteModelTest.java:266)
 </error>
   </testcase>
+  <testcase classname="models.ReporteModelTest" name="testSetDoctor" time="0.001">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at models.ReporteModelTest.testSetDoctor(ReporteModelTest.java:93)
+</failure>
+  </testcase>
   <testcase classname="models.ReporteModelTest" name="testSetCorreo" time="0.001">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
 	at models.ReporteModelTest.testSetCorreo(ReporteModelTest.java:147)
 </failure>
   </testcase>
-  <testcase classname="models.ReporteModelTest" name="testGetFecha" time="0.002">
+  <testcase classname="models.ReporteModelTest" name="testGetPaciente" time="0.001">
+    <failure message="expected:&lt;&gt; but was:&lt;null&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;&gt; but was:&lt;null&gt;
+	at models.ReporteModelTest.testGetPaciente(ReporteModelTest.java:105)
+</failure>
+  </testcase>
+  <testcase classname="models.ReporteModelTest" name="testGetFecha" time="0.001">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
 	at models.ReporteModelTest.testGetFecha(ReporteModelTest.java:188)
 </failure>
   </testcase>
-  <testcase classname="models.ReporteModelTest" name="testSetFecha" time="0.001">
-    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at models.ReporteModelTest.testSetFecha(ReporteModelTest.java:201)
+  <testcase classname="models.ReporteModelTest" name="testGetEspecialidad" time="0.001">
+    <failure message="expected:&lt;&gt; but was:&lt;null&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;&gt; but was:&lt;null&gt;
+	at models.ReporteModelTest.testGetEspecialidad(ReporteModelTest.java:159)
 </failure>
   </testcase>
-  <system-out><![CDATA[setEspecialidad
-setHorainicio
-getHorainicio
-getEspecialidad
-setPaciente
-setHorafin
+  <testcase classname="models.ReporteModelTest" name="testSetEspecialidad" time="0.001">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at models.ReporteModelTest.testSetEspecialidad(ReporteModelTest.java:174)
+</failure>
+  </testcase>
+  <testcase classname="models.ReporteModelTest" name="testGetHorainicio" time="0.005">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at models.ReporteModelTest.testGetHorainicio(ReporteModelTest.java:215)
+</failure>
+  </testcase>
+  <testcase classname="models.ReporteModelTest" name="testSetHorainicio" time="0.002">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at models.ReporteModelTest.testSetHorainicio(ReporteModelTest.java:228)
+</failure>
+  </testcase>
+  <system-out><![CDATA[getHorafin
+getCorreo
 getIdcita
-getHorafin
+setFecha
+setHorafin
 setIdcita
 getDoctor
-getPaciente
-getCorreo
-setDoctor
+setPaciente
 toString
+setDoctor
 setCorreo
+getPaciente
 getFecha
-setFecha
+getEspecialidad
+setEspecialidad
+getHorainicio
+setHorainicio
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

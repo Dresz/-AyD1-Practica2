@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="3" hostname="Corleto" name="service.ConsultasTest" skipped="0" tests="12" time="76.217" timestamp="2019-09-21T01:42:29">
+<testsuite errors="1" failures="3" hostname="Corleto" name="service.ConsultasTest" skipped="0" tests="12" time="31.232" timestamp="2019-09-21T04:15:52">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -60,7 +60,7 @@
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="ant.project.default-target" value="default" />
     <property name="javac.profile.cmd.line.arg" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner service.ConsultasTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-service.ConsultasTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher6620267393386657260.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit4934599778907809704.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner service.ConsultasTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-service.ConsultasTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher2322948317603060842.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit9165349320590170433.properties" />
     <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Corleto" />
     <property name="built-jar.properties" value="C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\built-jar.properties" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -101,7 +101,7 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="netbeans.home" value="C:\Program Files\NetBeans 8.2\platform" />
     <property name="javadoc.nonavbar" value="false" />
-    <property name="user.properties.file" value="C:\Users\Luis\AppData\Roaming\NetBeans\8.1\build.properties" />
+    <property name="user.properties.file" value="C:\Users\hp\AppData\Roaming\NetBeans\8.2\build.properties" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="javac.external.vm" value="true" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -146,7 +146,7 @@
     <property name="netbeans.productversion" value="NetBeans IDE 8.2 (Build 201609300101)" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="run.jvmargs.ide" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-621853672724667&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-631050046488534&quot;" />
     <property name="nb.junit.single" value="false" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
     <property name="build.compiler.emacs" value="true" />
@@ -221,42 +221,73 @@
     <property name="sun.arch.data.model" value="64" />
     <property name="mkdist.disabled" value="false" />
   </properties>
-  <testcase classname="service.ConsultasTest" name="testLogin" time="7.429" />
-  <testcase classname="service.ConsultasTest" name="testGetCitas" time="4.504" />
+  <testcase classname="service.ConsultasTest" name="testModificarCita" time="4.342" />
+  <testcase classname="service.ConsultasTest" name="testEliminar_Cita" time="0.004">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
+	at service.ConsultasTest.testEliminar_Cita(ConsultasTest.java:200)
+</failure>
+  </testcase>
+  <testcase classname="service.ConsultasTest" name="testGetDoctorPorId" time="2.148" />
+  <testcase classname="service.ConsultasTest" name="testGetPacientePorId" time="4.2" />
+  <testcase classname="service.ConsultasTest" name="testLogin" time="2.434" />
+  <testcase classname="service.ConsultasTest" name="testRegistrar" time="2.59">
+    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
+	at service.ConsultasTest.testRegistrar(ConsultasTest.java:66)
+</failure>
+  </testcase>
+  <testcase classname="service.ConsultasTest" name="testGetCitas" time="3.654" />
+  <testcase classname="service.ConsultasTest" name="testGetDoctores" time="3.169" />
+  <testcase classname="service.ConsultasTest" name="testCrearCita" time="3.042" />
+  <testcase classname="service.ConsultasTest" name="testGetPacientes" time="3.486" />
   <testcase classname="service.ConsultasTest" name="testGetReporte2" time="0.004">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at service.Consultas.getReporte2(Consultas.java:291)
-	at service.ConsultasTest.testGetReporte2(ConsultasTest.java:234)
+	at service.Consultas.getReporte2(Consultas.java:290)
+	at service.ConsultasTest.testGetReporte2(ConsultasTest.java:232)
 </error>
   </testcase>
-  <testcase classname="service.ConsultasTest" name="testGetReporte1" time="12.324">
+  <testcase classname="service.ConsultasTest" name="testGetReporte1" time="2.036">
     <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
-	at service.ConsultasTest.testGetReporte1(ConsultasTest.java:220)
-</failure>
-  </testcase>
-  <testcase classname="service.ConsultasTest" name="testCrearCita" time="8.753" />
-  <testcase classname="service.ConsultasTest" name="testGetDoctores" time="2.356" />
-  <testcase classname="service.ConsultasTest" name="testGetPacientes" time="12.59" />
-  <testcase classname="service.ConsultasTest" name="testRegistrar" time="4.725">
-    <failure message="expected:&lt;true&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;true&gt; but was:&lt;false&gt;
-	at service.ConsultasTest.testRegistrar(ConsultasTest.java:65)
-</failure>
-  </testcase>
-  <testcase classname="service.ConsultasTest" name="testGetDoctorPorId" time="4.867" />
-  <testcase classname="service.ConsultasTest" name="testModificarCita" time="2.276" />
-  <testcase classname="service.ConsultasTest" name="testGetPacientePorId" time="16.268" />
-  <testcase classname="service.ConsultasTest" name="testEliminar_Cita" time="0.004">
-    <failure message="expected:&lt;null&gt; but was:&lt;false&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;null&gt; but was:&lt;false&gt;
-	at service.ConsultasTest.testEliminar_Cita(ConsultasTest.java:202)
+	at service.ConsultasTest.testGetReporte1(ConsultasTest.java:218)
 </failure>
   </testcase>
   <system-out><![CDATA[Inicia el test de la clase Consultas
+Inicia el test del metodo ...
+modificarCita
+Conexion Establecida
+Finaliza el test del metodo ...
+Inicia el test del metodo ...
+Eliminar_Cita
+Finaliza el test del metodo ...
+Inicia el test del metodo ...
+getDoctorPorId
+Conexion Establecida
+Finaliza el test del metodo ...
+Inicia el test del metodo ...
+getPacientePorId
+Conexion Establecida
+Finaliza el test del metodo ...
 Inicia el test del metodo ...
 login
 Conexion Establecida
 Finaliza el test del metodo ...
 Inicia el test del metodo ...
+registrar
+Conexion Establecida
+Finaliza el test del metodo ...
+Inicia el test del metodo ...
 getCitas
+Conexion Establecida
+Finaliza el test del metodo ...
+Inicia el test del metodo ...
+getDoctores
+Conexion Establecida
+Finaliza el test del metodo ...
+Inicia el test del metodo ...
+crearCita
+Conexion Establecida
+Finaliza el test del metodo ...
+Inicia el test del metodo ...
+getPacientes
 Conexion Establecida
 Finaliza el test del metodo ...
 Inicia el test del metodo ...
@@ -266,40 +297,9 @@ Inicia el test del metodo ...
 getReporte1
 Conexion Establecida
 Finaliza el test del metodo ...
-Inicia el test del metodo ...
-crearCita
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getDoctores
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getPacientes
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-registrar
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getDoctorPorId
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-modificarCita
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-getPacientePorId
-Conexion Establecida
-Finaliza el test del metodo ...
-Inicia el test del metodo ...
-Eliminar_Cita
-Finaliza el test del metodo ...
 Finaliza el test de la clase Consultas
 ]]></system-out>
-  <system-err><![CDATA[sep 20, 2019 7:43:22 PM service.Consultas registrar
+  <system-err><![CDATA[sep 20, 2019 10:16:08 PM service.Consultas registrar
 GRAVE: null
 com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'inventado@protonmail.com' for key 'email'
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -319,8 +319,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2067)
 	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5175)
 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2052)
-	at service.Consultas.registrar(Consultas.java:36)
-	at service.ConsultasTest.testRegistrar(ConsultasTest.java:64)
+	at service.Consultas.registrar(Consultas.java:35)
+	at service.ConsultasTest.testRegistrar(ConsultasTest.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Corleto" name="service.DBTest" skipped="0" tests="2" time="5.126" timestamp="2019-09-21T01:43:46">
+<testsuite errors="0" failures="0" hostname="Corleto" name="service.DBTest" skipped="0" tests="2" time="2.53" timestamp="2019-09-21T04:16:24">
   <properties>
     <property name="default.javac.source" value="1.6" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -60,7 +60,7 @@
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="ant.project.default-target" value="default" />
     <property name="javac.profile.cmd.line.arg" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner service.DBTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-service.DBTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher1965480264224394680.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit8694759943004382094.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner service.DBTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\test\results\TEST-service.DBTest.xml crashfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junitvmwatcher5824370858326436630.properties propsfile=C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\junit638853393018155378.properties" />
     <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Corleto" />
     <property name="built-jar.properties" value="C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\build\built-jar.properties" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -101,7 +101,7 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
     <property name="netbeans.home" value="C:\Program Files\NetBeans 8.2\platform" />
     <property name="javadoc.nonavbar" value="false" />
-    <property name="user.properties.file" value="C:\Users\Luis\AppData\Roaming\NetBeans\8.1\build.properties" />
+    <property name="user.properties.file" value="C:\Users\hp\AppData\Roaming\NetBeans\8.2\build.properties" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="javac.external.vm" value="true" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -146,7 +146,7 @@
     <property name="netbeans.productversion" value="NetBeans IDE 8.2 (Build 201609300101)" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="run.jvmargs.ide" value="" />
-    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-621853672724667&quot;" />
+    <property name="run.jvmargs" value="  -javaagent:&quot;C:\Users\Oscar\AppData\Roaming\NetBeans\8.2\modules\ext\jacocoagent.jar&quot;=includes=models.*:practica2.*:service.*,destfile=&quot;C:\Users\Oscar\Documents\USAC\Analisis y diseño\Practica2\-AyD1-Practica2\Practica2\jacoco.exec-631050046488534&quot;" />
     <property name="nb.junit.single" value="false" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
     <property name="build.compiler.emacs" value="true" />
@@ -221,8 +221,8 @@
     <property name="sun.arch.data.model" value="64" />
     <property name="mkdist.disabled" value="false" />
   </properties>
-  <testcase classname="service.DBTest" name="testObtener" time="5.059" />
-  <testcase classname="service.DBTest" name="testCerrar" time="0.013" />
+  <testcase classname="service.DBTest" name="testObtener" time="2.44" />
+  <testcase classname="service.DBTest" name="testCerrar" time="0.017" />
   <system-out><![CDATA[Inicia el test de la clase DB
 Inicia el test del metodo ...obtener
 Conexion Establecida
