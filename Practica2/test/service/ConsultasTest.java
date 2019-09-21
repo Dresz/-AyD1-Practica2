@@ -192,14 +192,12 @@ public class ConsultasTest {
     @Test
     public void testEliminar_Cita() throws Exception {
         System.out.println("Eliminar_Cita");
-        Connection conexion = null;
         String id = "13";
         Consultas instance = new Consultas();
         Boolean expResult = true;
-        Boolean result = instance.Eliminar_Cita(conexion, id);
+        Boolean result = instance.Eliminar_Cita((java.sql.Connection) DB.obtener(), id);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
