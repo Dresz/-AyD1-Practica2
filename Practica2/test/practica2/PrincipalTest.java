@@ -87,9 +87,10 @@ public class PrincipalTest {
     public void testCrearCita() {
         System.out.println("crearCita");
         Principal instance = new Principal();
-        Cita expResult = null;
-        Cita result = instance.crearCita();
-        assertEquals(expResult, result);
+        Doctor d = new Doctor();
+        d.setIddoctor(1);
+        Cita result = instance.crearCita(d,1,null,"10:00:00","11:00:00");
+        assertNull(result);
         
     }
 

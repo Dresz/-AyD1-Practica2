@@ -479,7 +479,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Cita c = crearCita();
+        Cita c = crearCita((Doctor) comboDoctores.getSelectedItem(), 1, fechaCita.getDate(), jt_hora_ini.getText(), jt_hora_fin.getText());        
         if (c == null) {
             JOptionPane.showMessageDialog(this, "Los datos ingresados estan incompletos o son invalidos");
             return;
@@ -619,15 +619,14 @@ public class Principal extends javax.swing.JFrame {
         for (Doctor doctor : doctores) {
             comboDoctores.addItem(doctor);
         }
+        
         return true;
     }
 
-    public Cita crearCita() {
-        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();
-        int paciente = 1; //Estos campos se tienen que modificar luego
-        Date fecha = fechaCita.getDate();
-        String[] hora_Ini = jt_hora_ini.getText().split(":");
-        String[] hora_Fin = jt_hora_fin.getText().split(":");
+    public Cita crearCita(Doctor doctor, int paciente, Date fecha,String horaIni,String horaFin) {
+        
+        String[] hora_Ini = horaIni.split(":");
+        String[] hora_Fin = horaFin.split(":");
 
         if (fecha == null || hora_Ini.length != 2 || hora_Fin.length != 2) {
             return null;
@@ -729,13 +728,15 @@ public class Principal extends javax.swing.JFrame {
         return true;
     }
 
-    public void llenarDoctores() {
+    public boolean llenarDoctores() {
         Consultas con = new Consultas();
         try {
             LinkedList<Doctor> docs = con.getDoctores((java.sql.Connection) DB.obtener());
             setDoctors(docs);
+            return true;
         } catch (SQLException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
     }
 
