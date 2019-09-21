@@ -449,7 +449,7 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-    LinkedList<Cita> citas=null;
+    LinkedList<Cita> citas = null;
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
         //Comentado para no poner lenta la app
         if (jTabbedPane2.getSelectedIndex() == 0) {
@@ -464,17 +464,17 @@ public class Principal extends javax.swing.JFrame {
         if (jTabbedPane2.getSelectedIndex() == 3) {
             Consultas con = new Consultas();
             try {
-                LinkedList<Cita> docs = con.getCitasid((java.sql.Connection) DB.obtener(),jLabel1.getText());
+                LinkedList<Cita> docs = con.getCitasid((java.sql.Connection) DB.obtener(), jLabel1.getText());
                 citas = docs;
                 jComboBox3.removeAllItems();
                 for (Cita doc : docs) {
-                    jComboBox3.addItem(doc.getIdcita()+"");
+                    jComboBox3.addItem(doc.getIdcita() + "");
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+
 
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
@@ -502,8 +502,9 @@ public class Principal extends javax.swing.JFrame {
     private void cbox_citaModItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbox_citaModItemStateChanged
         Cita item = (Cita) cbox_citaMod.getSelectedItem();
         try {
-            if(item != null)
+            if (item != null) {
                 setDatosCita(item);
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -533,20 +534,19 @@ public class Principal extends javax.swing.JFrame {
     private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
         try {
             for (Cita cita : citas) {
-            if (cita.getIdcita()==  Integer.parseInt( jComboBox3.getSelectedItem().toString())) {
-                jTextField3.setText(cita.getDoctor()+"");
-                jTextField4.setText(cita.getFecha()+"");
-                jTextField5.setText(cita.getHorainicio().toString());
-                jTextField6.setText(cita.getHorafin().toString());
+                if (cita.getIdcita() == Integer.parseInt(jComboBox3.getSelectedItem().toString())) {
+                    jTextField3.setText(cita.getDoctor() + "");
+                    jTextField4.setText(cita.getFecha() + "");
+                    jTextField5.setText(cita.getHorainicio().toString());
+                    jTextField6.setText(cita.getHorafin().toString());
 
+                }
 
             }
-            
-        }
         } catch (Exception e) {
         }
-        
-        
+
+
     }//GEN-LAST:event_jComboBox3ItemStateChanged
 
     public static void main(String args[]) {
@@ -610,7 +610,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void setUser(String email) {
         if (!email.equals("admin@admin.com")) {
-           // jTabbedPane2.setEnabledAt(3, false);
+            // jTabbedPane2.setEnabledAt(3, false);
         }
         jLabel1.setText(email);
     }
@@ -626,7 +626,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public Cita crearCita() {
-        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();        
+        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();
         int paciente = 1; //Estos campos se tienen que modificar luego
         Date fecha = fechaCita.getDate();
         String[] hora_Ini = jt_hora_ini.getText().split(":");
@@ -720,7 +720,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Los datos ingresados estan incompletos o son inválidos");
             return false;
         }
-        
+
         System.out.println(cita);
         Consultas con = new Consultas();
         if (con.modificarCita(DB.obtener(), cita)) {
