@@ -16,17 +16,14 @@ public class DB {
             Class.forName(DRIVER);
             conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
             System.out.println("Conexion Establecida");
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Error ClassNotFoundException");
-        } catch (SQLException sql) {
-             System.out.println("Error SQLException");
-             sql.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
         return conn;
     }
 
     public static void cerrar() throws SQLException, Throwable {
-        if (conn != null) {
+        if (!conn.isClosed()) {
             conn.close();
         }
     }

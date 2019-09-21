@@ -21,6 +21,15 @@ public class Cita {
     private java.sql.Time horainicio;
     private java.sql.Time horafin;
     
+    public Cita(){
+        idcita = -1;
+        doctor = -1;
+        paciente = -1;
+        fecha = null;
+        horainicio = null;
+        horafin = null;
+    }
+    
     public int getIdcita() {
         return idcita;
     }

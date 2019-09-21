@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
+import models.ReporteModel;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -50,6 +51,7 @@ public class ConsultasTest {
     public void testRegistrar() {
         System.out.println("registrar");
         Connection connection = DB.obtener();//iniciamos conexion
+        
         Paciente paciente = new Paciente();
         paciente.setDireccion("direccion inventada");
         paciente.setEmail("inventado@protonmail.com");
@@ -62,8 +64,6 @@ public class ConsultasTest {
         boolean expResult = true;
         boolean result = instance.registrar(connection, paciente);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -72,15 +72,14 @@ public class ConsultasTest {
     @Test
     public void testLogin() throws Exception {
         System.out.println("login");
-        Connection conexion = DB.obtener();
+        Connection conexion = DB.obtener();//obtenemos la conexion
+        
         String email = "inventado@protonmail.com";
         String password = "adios";
         Consultas instance = new Consultas();
         boolean expResult = false;
         boolean result = instance.login(conexion, email, password);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -169,6 +168,18 @@ public class ConsultasTest {
     }
     
     /**
+     * Test of getCitasid method, of class Consultas.
+     */
+    @Test
+    public void testGetCitasid() throws Exception {
+        System.out.println("getCitasid");
+        Connection conexion = DB.obtener();
+        Consultas instance = new Consultas();
+        LinkedList<Cita> result = instance.getCitasid(conexion, "paciente1@gmail.com");
+        assertNotNull(result);
+    }
+    
+    /**
      * Test of modificarCita method, of class Consultas.
      */
     @Test
@@ -193,14 +204,49 @@ public class ConsultasTest {
     @Test
     public void testEliminar_Cita() throws Exception {
         System.out.println("Eliminar_Cita");
-        Connection conexion = null;
-        String id = "";
+        String id = "13";
         Consultas instance = new Consultas();
-        Boolean expResult = null;
-        Boolean result = instance.Eliminar_Cita(conexion, id);
+        Boolean expResult = true;
+        Boolean result = instance.Eliminar_Cita((java.sql.Connection) DB.obtener(), id);
         assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getReporte1 method, of class Consultas.
+     */
+    @Test
+    public void testGetReporte1() throws Exception {
+        System.out.println("getReporte1");
+        Connection conexion = DB.obtener();
+        String fecha = "2019-09-12";
+        Consultas instance = new Consultas();
+        LinkedList<ReporteModel> expResult = new LinkedList<>();
+        LinkedList<ReporteModel> result = instance.getReporte1(conexion, fecha);
+        assertEquals(fecha, result.get(0).getFecha().toString());
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getReporte2 method, of class Consultas.
+     */
+    @Test
+    public void testGetReporte2() throws Exception {
+        System.out.println("getReporte2");
+        Connection conexion = DB.obtener();
+        int buscar = 1;
+        int tipo = 0;
+        Consultas instance = new Consultas();
+        LinkedList<ReporteModel> expResult = new LinkedList<>();
+        LinkedList<ReporteModel> result = instance.getReporte2(conexion, buscar, tipo);
+        assertEquals(expResult, result);
+        
+        tipo = 1;
+        result = instance.getReporte2(conexion, buscar, tipo);
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
     }
     
 }

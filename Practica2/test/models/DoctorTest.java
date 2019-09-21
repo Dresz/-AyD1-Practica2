@@ -7,10 +7,10 @@ package models;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -44,11 +44,9 @@ public class DoctorTest {
     public void testGetIddoctor() {
         System.out.println("getIddoctor");
         Doctor instance = new Doctor();
-        int expResult = 0;
+        int expResult = -1;
         int result = instance.getIddoctor();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -60,8 +58,6 @@ public class DoctorTest {
         int iddoctor = 0;
         Doctor instance = new Doctor();
         instance.setIddoctor(iddoctor);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -74,8 +70,6 @@ public class DoctorTest {
         String expResult = "";
         String result = instance.getNombre();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -87,8 +81,6 @@ public class DoctorTest {
         String nombre = "";
         Doctor instance = new Doctor();
         instance.setNombre(nombre);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -101,8 +93,6 @@ public class DoctorTest {
         String expResult = "";
         String result = instance.getEspecialidad();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -114,8 +104,6 @@ public class DoctorTest {
         String especialidad = "";
         Doctor instance = new Doctor();
         instance.setEspecialidad(especialidad);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -128,8 +116,6 @@ public class DoctorTest {
         String expResult = "";
         String result = instance.getTelefono();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -141,8 +127,6 @@ public class DoctorTest {
         String telefono = "";
         Doctor instance = new Doctor();
         instance.setTelefono(telefono);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -152,11 +136,9 @@ public class DoctorTest {
     public void testToString() {
         System.out.println("toString");
         Doctor instance = new Doctor();
-        String expResult = "";
+        String expResult = " - ";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

@@ -265,7 +265,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbox_pacienteMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
                     .addComponent(fechaCitaMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -297,6 +297,11 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane2.addTab("Reportes", jPanel4);
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox3ItemStateChanged(evt);
+            }
+        });
 
         jLabel10.setText("Citas");
 
@@ -444,7 +449,7 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    LinkedList<Cita> citas = null;
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
         //Comentado para no poner lenta la app
         if (jTabbedPane2.getSelectedIndex() == 0) {
@@ -456,6 +461,20 @@ public class Principal extends javax.swing.JFrame {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if (jTabbedPane2.getSelectedIndex() == 3) {
+            Consultas con = new Consultas();
+            try {
+                LinkedList<Cita> docs = con.getCitasid((java.sql.Connection) DB.obtener(), jLabel1.getText());
+                citas = docs;
+                jComboBox3.removeAllItems();
+                for (Cita doc : docs) {
+                    jComboBox3.addItem(doc.getIdcita() + "");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
 
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
@@ -472,10 +491,8 @@ public class Principal extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo crear la cita, revise la consola para mas detalles");
         }
-
-
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
     private void btn_guardarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCitaActionPerformed
         actualizarCita();
     }//GEN-LAST:event_btn_guardarCitaActionPerformed
@@ -483,8 +500,9 @@ public class Principal extends javax.swing.JFrame {
     private void cbox_citaModItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbox_citaModItemStateChanged
         Cita item = (Cita) cbox_citaMod.getSelectedItem();
         try {
-            if(item != null)
+            if (item != null) {
                 setDatosCita(item);
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -492,9 +510,16 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Login login = new Login();
+        login.show();
+        this.show(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnActualizarModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarModActionPerformed
+        actualizarModAction();
+    }//GEN-LAST:event_btnActualizarModActionPerformed
+
+    protected void actualizarModAction(){
         Consultas con = new Consultas();
         try {
             LinkedList<Doctor> doctores = con.getDoctores(DB.obtener());
@@ -506,10 +531,23 @@ public class Principal extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnActualizarModActionPerformed
+    }
+    
+    private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
+        try {
+            for (Cita cita : citas) {
+                if (cita.getIdcita() == Integer.parseInt(jComboBox3.getSelectedItem().toString())) {
+                    jTextField3.setText(cita.getDoctor() + "");
+                    jTextField4.setText(cita.getFecha() + "");
+                    jTextField5.setText(cita.getHorainicio().toString());
+                    jTextField6.setText(cita.getHorafin().toString());
+                }
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jComboBox3ItemStateChanged
 
     public static void main(String args[]) {
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
@@ -525,7 +563,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<Paciente> cbox_pacienteMod;
     private javax.swing.JComboBox<Doctor> comboDoctores;
     private com.toedter.calendar.JDateChooser fechaCita;
-    private com.toedter.calendar.JDateChooser fechaCitaMod;
+    protected com.toedter.calendar.JDateChooser fechaCitaMod;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -563,13 +601,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextPane jt_hora_fin;
     private javax.swing.JTextPane jt_hora_ini;
-    private javax.swing.JTextPane tp_horaFinMod;
-    private javax.swing.JTextPane tp_horaIniMod;
+    protected javax.swing.JTextPane tp_horaFinMod;
+    protected javax.swing.JTextPane tp_horaIniMod;
     // End of variables declaration//GEN-END:variables
 
     public void setUser(String email) {
         if (!email.equals("admin@admin.com")) {
-            jTabbedPane2.setEnabledAt(3, false);
+            // jTabbedPane2.setEnabledAt(3, false);
         }
         jLabel1.setText(email);
     }
@@ -585,7 +623,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public Cita crearCita() {
-        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();        
+        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();
         int paciente = 1; //Estos campos se tienen que modificar luego
         Date fecha = fechaCita.getDate();
         String[] hora_Ini = jt_hora_ini.getText().split(":");
@@ -658,7 +696,7 @@ public class Principal extends javax.swing.JFrame {
         int idPaciente = paciente.getIdpaciente();
         Date fecha = fechaCitaMod.getDate();
         String[] horaIni = tp_horaIniMod.getText().split(":");
-        String[] horaFin = tp_horaFinMod.getText().split(":");
+        String[] horaFin = tp_horaFinMod.getText().split(":"); 
 
         if (fecha == null || horaIni.length != 2 || horaFin.length != 2) {
             return null;
@@ -679,7 +717,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Los datos ingresados estan incompletos o son inválidos");
             return false;
         }
-        
+
         System.out.println(cita);
         Consultas con = new Consultas();
         if (con.modificarCita(DB.obtener(), cita)) {

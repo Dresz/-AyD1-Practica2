@@ -4,8 +4,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import service.DB;
 import service.Consultas;
+import service.DB;
 
 public class Login extends javax.swing.JFrame {
 
@@ -115,11 +115,17 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        logAction();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+    protected boolean logAction(){
         if(!jemail.getText().equals("") && !jcontra.getText().equals("")){
-            
             Consultas consulta=new Consultas();
-            
+            if(jemail.getText().equals("admin@admin.com")&& jcontra.getText().equals("123")){
+                    Reportes principal =new Reportes();
+                    principal.show();
+                    this.show(false);
+            }
             try {
                 boolean response = consulta.login((java.sql.Connection) DB.obtener(),
                         jemail.getText(),jcontra.getText());
@@ -129,6 +135,7 @@ public class Login extends javax.swing.JFrame {
                     principal.setUser(jemail.getText());
                     principal.show();
                     this.show(false);
+                    return true;
                 }
 
             } catch (SQLException ex) {
@@ -138,9 +145,9 @@ public class Login extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this,"Llene todos los campos");
         }
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+        return false;
+    }
+    
     public static void main(String args[]) {
   
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -158,7 +165,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JPasswordField jcontra;
-    private javax.swing.JTextField jemail;
+    protected javax.swing.JPasswordField jcontra;
+    protected javax.swing.JTextField jemail;
     // End of variables declaration//GEN-END:variables
 }
