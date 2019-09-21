@@ -5,8 +5,10 @@
  */
 package practica2;
 
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
@@ -47,6 +49,7 @@ public class RegistroTest {
         String[] args = null;
         Registro.main(args);
         Registro reg = new Registro();
+        Assert.assertNotNull(reg);
     }
     
     /**
@@ -59,7 +62,7 @@ public class RegistroTest {
         assertFalse(result);
         
         reg.jnombre.setText("nombre prueba");
-        reg.jemail.setText("email@prueba.com");
+        reg.jemail.setText("email-"+UUID.randomUUID().toString() + "@prueba.com");
         reg.jcontra1.setText("pass_prueba");
         reg.jcontra2.setText("pass_prueba");
         reg.jdireccion.setText("dir test");

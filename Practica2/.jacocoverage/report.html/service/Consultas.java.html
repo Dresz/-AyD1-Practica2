@@ -196,16 +196,16 @@ import models.ReporteModel;
 <span class="fc" id="L196">        ResultSet res = consulta.executeQuery();</span>
 
 <span class="fc" id="L198">        LinkedList&lt;Cita&gt; citas = new LinkedList&lt;&gt;();</span>
-<span class="pc bpc" id="L199" title="1 of 2 branches missed.">        while(res.next()){</span>
-<span class="nc" id="L200">            Cita cita = new Cita();</span>
-<span class="nc" id="L201">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
-<span class="nc" id="L202">            cita.setDoctor(res.getInt(&quot;doctor&quot;));</span>
-<span class="nc" id="L203">            cita.setPaciente(res.getInt(&quot;paciente&quot;));</span>
-<span class="nc" id="L204">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
-<span class="nc" id="L205">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
-<span class="nc" id="L206">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
-<span class="nc" id="L207">            citas.add(cita);</span>
-<span class="nc" id="L208">        }</span>
+<span class="fc bfc" id="L199" title="All 2 branches covered.">        while(res.next()){</span>
+<span class="fc" id="L200">            Cita cita = new Cita();</span>
+<span class="fc" id="L201">            cita.setIdcita(res.getInt(&quot;idcita&quot;));</span>
+<span class="fc" id="L202">            cita.setDoctor(res.getInt(&quot;doctor&quot;));</span>
+<span class="fc" id="L203">            cita.setPaciente(res.getInt(&quot;paciente&quot;));</span>
+<span class="fc" id="L204">            cita.setFecha(res.getDate(&quot;fecha&quot;));</span>
+<span class="fc" id="L205">            cita.setHorainicio(res.getTime(&quot;horainicio&quot;));</span>
+<span class="fc" id="L206">            cita.setHorafin(res.getTime(&quot;horafin&quot;));</span>
+<span class="fc" id="L207">            citas.add(cita);</span>
+<span class="fc" id="L208">        }</span>
         
 <span class="fc" id="L210">        return citas;</span>
     }
@@ -310,15 +310,15 @@ import models.ReporteModel;
         PreparedStatement consulta;
 <span class="fc" id="L311">        ResultSet res=null;</span>
 <span class="fc" id="L312">        String sql=&quot;&quot;;</span>
-<span class="pc bpc" id="L313" title="1 of 2 branches missed.">        if(tipo==1){</span>
-<span class="nc" id="L314">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n&quot; +</span>
+<span class="fc bfc" id="L313" title="All 2 branches covered.">        if(tipo==1){</span>
+<span class="fc" id="L314">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n&quot; +</span>
                                                                 &quot;FROM Doctor d, Especialidad e,Paciente p, Cita c \n&quot; +
                                                                 &quot;WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente &quot;+
                                                                 &quot;AND c.paciente=? ;&quot;;
             
-<span class="nc" id="L319">            consulta= conexion.prepareStatement(sql);</span>
-<span class="nc" id="L320">            consulta.setInt(1,buscar);</span>
-<span class="nc" id="L321">            res = consulta.executeQuery();</span>
+<span class="fc" id="L319">            consulta= conexion.prepareStatement(sql);</span>
+<span class="fc" id="L320">            consulta.setInt(1,buscar);</span>
+<span class="fc" id="L321">            res = consulta.executeQuery();</span>
         }
         else {
 <span class="fc" id="L324">            sql=&quot;SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp\n&quot; +</span>

@@ -525,8 +525,8 @@ public class Reportes extends javax.swing.JFrame {
         /* Create and display the form */
 <span class="fc" id="L526">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L528">                new Reportes().setVisible(true);</span>
-<span class="nc" id="L529">            }</span>
+<span class="fc" id="L528">                new Reportes().setVisible(true);</span>
+<span class="fc" id="L529">            }</span>
         });
 <span class="fc" id="L531">    }</span>
 
@@ -566,15 +566,15 @@ public class Reportes extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 public boolean setReporte(LinkedList&lt;ReporteModel&gt; reportes, DefaultTableModel tabla) {
-<span class="nc" id="L569">        tabla.setRowCount(0);</span>
-<span class="nc bnc" id="L570" title="All 2 branches missed.">        if (reportes == null) {</span>
+<span class="fc" id="L569">        tabla.setRowCount(0);</span>
+<span class="pc bpc" id="L570" title="1 of 2 branches missed.">        if (reportes == null) {</span>
 <span class="nc" id="L571">            return false;</span>
         }
-<span class="nc bnc" id="L573" title="All 2 branches missed.">        for (ReporteModel reporte : reportes) {</span>
+<span class="pc bpc" id="L573" title="1 of 2 branches missed.">        for (ReporteModel reporte : reportes) {</span>
 <span class="nc" id="L574">            tabla.addRow(new Object[]{reporte.getIdcita(),reporte.getCorreo(),reporte.getPaciente(),</span>
 <span class="nc" id="L575">                reporte.getDoctor(),reporte.getFecha(),reporte.getHorainicio(),reporte.getHorafin(),reporte.getEspecialidad()});</span>
 <span class="nc" id="L576">        }</span>
-<span class="nc" id="L577">        return true;</span>
+<span class="fc" id="L577">        return true;</span>
     }
 public boolean setPaciente(LinkedList&lt;Paciente&gt; pacientes) {
 <span class="fc" id="L580">        jComboBox1.removeAll();</span>

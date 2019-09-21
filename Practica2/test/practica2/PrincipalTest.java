@@ -92,6 +92,8 @@ public class PrincipalTest {
         Cita result = instance.crearCita(d,1,null,"10:00:00","11:00:00");
         assertNull(result);
         
+        //result = instance.crearCita(d, 1, new java.util.Date(119,8,21), "10:00:00", "11:00:00");
+        //assertNotNull(result);
     }
 
     /**

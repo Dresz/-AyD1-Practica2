@@ -479,7 +479,7 @@ public class Principal extends javax.swing.JFrame {
 <span class="fc" id="L479">    }//GEN-LAST:event_jTabbedPane2StateChanged</span>
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-<span class="nc" id="L482">        Cita c = crearCita();</span>
+<span class="nc" id="L482">        Cita c = crearCita((Doctor) comboDoctores.getSelectedItem(), 1, fechaCita.getDate(), jt_hora_ini.getText(), jt_hora_fin.getText());        </span>
 <span class="nc bnc" id="L483" title="All 2 branches missed.">        if (c == null) {</span>
 <span class="nc" id="L484">            JOptionPane.showMessageDialog(this, &quot;Los datos ingresados estan incompletos o son invalidos&quot;);</span>
 <span class="nc" id="L485">            return;</span>
@@ -550,8 +550,8 @@ public class Principal extends javax.swing.JFrame {
     public static void main(String args[]) {
 <span class="fc" id="L551">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="fc" id="L553">                new Principal().setVisible(true);</span>
-<span class="fc" id="L554">            }</span>
+<span class="nc" id="L553">                new Principal().setVisible(true);</span>
+<span class="nc" id="L554">            }</span>
         });
 <span class="fc" id="L556">    }</span>
 
@@ -619,125 +619,126 @@ public class Principal extends javax.swing.JFrame {
 <span class="fc bfc" id="L619" title="All 2 branches covered.">        for (Doctor doctor : doctores) {</span>
 <span class="fc" id="L620">            comboDoctores.addItem(doctor);</span>
 <span class="fc" id="L621">        }</span>
-<span class="fc" id="L622">        return true;</span>
+        
+<span class="fc" id="L623">        return true;</span>
     }
 
-    public Cita crearCita() {
-<span class="fc" id="L626">        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();</span>
-<span class="fc" id="L627">        int paciente = 1; //Estos campos se tienen que modificar luego</span>
-<span class="fc" id="L628">        Date fecha = fechaCita.getDate();</span>
-<span class="fc" id="L629">        String[] hora_Ini = jt_hora_ini.getText().split(&quot;:&quot;);</span>
-<span class="fc" id="L630">        String[] hora_Fin = jt_hora_fin.getText().split(&quot;:&quot;);</span>
+    public Cita crearCita(Doctor doctor, int paciente, Date fecha,String horaIni,String horaFin) {
+        
+<span class="fc" id="L628">        String[] hora_Ini = horaIni.split(&quot;:&quot;);</span>
+<span class="fc" id="L629">        String[] hora_Fin = horaFin.split(&quot;:&quot;);</span>
 
-<span class="pc bpc" id="L632" title="5 of 6 branches missed.">        if (fecha == null || hora_Ini.length != 2 || hora_Fin.length != 2) {</span>
-<span class="fc" id="L633">            return null;</span>
+<span class="pc bpc" id="L631" title="3 of 6 branches missed.">        if (fecha == null || hora_Ini.length != 2 || hora_Fin.length != 2) {</span>
+<span class="fc" id="L632">            return null;</span>
         }
 
-<span class="nc" id="L636">        Cita c = new Cita();</span>
-<span class="nc" id="L637">        c.setDoctor(doctor.getIddoctor());</span>
-<span class="nc" id="L638">        c.setPaciente(paciente);</span>
-<span class="nc" id="L639">        c.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));</span>
-<span class="nc" id="L640">        c.setHorainicio(new Time(Integer.parseInt(hora_Ini[0]), Integer.parseInt(hora_Ini[1]), 0));</span>
-<span class="nc" id="L641">        c.setHorafin(new Time(Integer.parseInt(hora_Fin[0]), Integer.parseInt(hora_Fin[1]), 0));</span>
-<span class="nc" id="L642">        return c;</span>
+<span class="nc" id="L635">        Cita c = new Cita();</span>
+<span class="nc" id="L636">        c.setDoctor(doctor.getIddoctor());</span>
+<span class="nc" id="L637">        c.setPaciente(paciente);</span>
+<span class="nc" id="L638">        c.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));</span>
+<span class="nc" id="L639">        c.setHorainicio(new Time(Integer.parseInt(hora_Ini[0]), Integer.parseInt(hora_Ini[1]), 0));</span>
+<span class="nc" id="L640">        c.setHorafin(new Time(Integer.parseInt(hora_Fin[0]), Integer.parseInt(hora_Fin[1]), 0));</span>
+<span class="nc" id="L641">        return c;</span>
     }
 
     /*MODIFICAR CITAS*/
     public boolean setCitasMod(LinkedList&lt;Cita&gt; citas) {
-<span class="fc bfc" id="L647" title="All 2 branches covered.">        if (citas == null) {</span>
-<span class="fc" id="L648">            return false;</span>
+<span class="fc bfc" id="L646" title="All 2 branches covered.">        if (citas == null) {</span>
+<span class="fc" id="L647">            return false;</span>
         }
-<span class="fc" id="L650">        cbox_citaMod.removeAllItems();</span>
-<span class="fc bfc" id="L651" title="All 2 branches covered.">        for (Cita cita : citas) {</span>
-<span class="fc" id="L652">            cbox_citaMod.addItem(cita);</span>
-<span class="fc" id="L653">        }</span>
-<span class="fc" id="L654">        return true;</span>
+<span class="fc" id="L649">        cbox_citaMod.removeAllItems();</span>
+<span class="fc bfc" id="L650" title="All 2 branches covered.">        for (Cita cita : citas) {</span>
+<span class="fc" id="L651">            cbox_citaMod.addItem(cita);</span>
+<span class="fc" id="L652">        }</span>
+<span class="fc" id="L653">        return true;</span>
     }
 
     public boolean setDatosCita(Cita cita) throws SQLException {
-<span class="fc" id="L658">        Consultas consulta = new Consultas();</span>
-<span class="fc" id="L659">        Doctor doctor = consulta.getDoctorPorId(DB.obtener(), cita.getDoctor());</span>
-<span class="fc" id="L660">        cbox_doctorMod.setSelectedItem(doctor);</span>
-<span class="fc" id="L661">        Paciente paciente = consulta.getPacientePorId(DB.obtener(), cita.getPaciente());</span>
-<span class="fc" id="L662">        cbox_pacienteMod.setSelectedItem(paciente);</span>
-<span class="fc" id="L663">        fechaCitaMod.setDate(cita.getFecha());</span>
-<span class="fc" id="L664">        tp_horaIniMod.setText(cita.getHorainicio().toString());</span>
-<span class="fc" id="L665">        tp_horaFinMod.setText(cita.getHorafin().toString());</span>
+<span class="fc" id="L657">        Consultas consulta = new Consultas();</span>
+<span class="fc" id="L658">        Doctor doctor = consulta.getDoctorPorId(DB.obtener(), cita.getDoctor());</span>
+<span class="fc" id="L659">        cbox_doctorMod.setSelectedItem(doctor);</span>
+<span class="fc" id="L660">        Paciente paciente = consulta.getPacientePorId(DB.obtener(), cita.getPaciente());</span>
+<span class="fc" id="L661">        cbox_pacienteMod.setSelectedItem(paciente);</span>
+<span class="fc" id="L662">        fechaCitaMod.setDate(cita.getFecha());</span>
+<span class="fc" id="L663">        tp_horaIniMod.setText(cita.getHorainicio().toString());</span>
+<span class="fc" id="L664">        tp_horaFinMod.setText(cita.getHorafin().toString());</span>
 
-<span class="fc" id="L667">        return true;</span>
+<span class="fc" id="L666">        return true;</span>
     }
 
     public boolean setDoctoresMod(LinkedList&lt;Doctor&gt; doctores) {
-<span class="fc bfc" id="L671" title="All 2 branches covered.">        if (doctores == null) {</span>
-<span class="fc" id="L672">            return false;</span>
+<span class="fc bfc" id="L670" title="All 2 branches covered.">        if (doctores == null) {</span>
+<span class="fc" id="L671">            return false;</span>
         }
-<span class="fc" id="L674">        cbox_doctorMod.removeAllItems();</span>
-<span class="fc bfc" id="L675" title="All 2 branches covered.">        for (Doctor doctor : doctores) {</span>
-<span class="fc" id="L676">            cbox_doctorMod.addItem(doctor);</span>
-<span class="fc" id="L677">        }</span>
-<span class="fc" id="L678">        return true;</span>
+<span class="fc" id="L673">        cbox_doctorMod.removeAllItems();</span>
+<span class="fc bfc" id="L674" title="All 2 branches covered.">        for (Doctor doctor : doctores) {</span>
+<span class="fc" id="L675">            cbox_doctorMod.addItem(doctor);</span>
+<span class="fc" id="L676">        }</span>
+<span class="fc" id="L677">        return true;</span>
     }
 
     public boolean setPacientesMod(LinkedList&lt;Paciente&gt; pacientes) {
-<span class="fc bfc" id="L682" title="All 2 branches covered.">        if (pacientes == null) {</span>
-<span class="fc" id="L683">            return false;</span>
+<span class="fc bfc" id="L681" title="All 2 branches covered.">        if (pacientes == null) {</span>
+<span class="fc" id="L682">            return false;</span>
         }
-<span class="fc" id="L685">        cbox_pacienteMod.removeAllItems();</span>
-<span class="fc bfc" id="L686" title="All 2 branches covered.">        for (Paciente paciente : pacientes) {</span>
-<span class="fc" id="L687">            cbox_pacienteMod.addItem(paciente);</span>
-<span class="fc" id="L688">        }</span>
-<span class="fc" id="L689">        return true;</span>
+<span class="fc" id="L684">        cbox_pacienteMod.removeAllItems();</span>
+<span class="fc bfc" id="L685" title="All 2 branches covered.">        for (Paciente paciente : pacientes) {</span>
+<span class="fc" id="L686">            cbox_pacienteMod.addItem(paciente);</span>
+<span class="fc" id="L687">        }</span>
+<span class="fc" id="L688">        return true;</span>
     }
 
     public Cita getCitaMod() {
-<span class="fc" id="L693">        Doctor doctor = (Doctor) cbox_doctorMod.getSelectedItem();</span>
-<span class="fc" id="L694">        int idDoctor = doctor.getIddoctor();</span>
-<span class="fc" id="L695">        Paciente paciente = (Paciente) cbox_pacienteMod.getSelectedItem();</span>
-<span class="fc" id="L696">        int idPaciente = paciente.getIdpaciente();</span>
-<span class="fc" id="L697">        Date fecha = fechaCitaMod.getDate();</span>
-<span class="fc" id="L698">        String[] horaIni = tp_horaIniMod.getText().split(&quot;:&quot;);</span>
-<span class="fc" id="L699">        String[] horaFin = tp_horaFinMod.getText().split(&quot;:&quot;); </span>
+<span class="fc" id="L692">        Doctor doctor = (Doctor) cbox_doctorMod.getSelectedItem();</span>
+<span class="fc" id="L693">        int idDoctor = doctor.getIddoctor();</span>
+<span class="fc" id="L694">        Paciente paciente = (Paciente) cbox_pacienteMod.getSelectedItem();</span>
+<span class="fc" id="L695">        int idPaciente = paciente.getIdpaciente();</span>
+<span class="fc" id="L696">        Date fecha = fechaCitaMod.getDate();</span>
+<span class="fc" id="L697">        String[] horaIni = tp_horaIniMod.getText().split(&quot;:&quot;);</span>
+<span class="fc" id="L698">        String[] horaFin = tp_horaFinMod.getText().split(&quot;:&quot;); </span>
 
-<span class="pc bpc" id="L701" title="2 of 6 branches missed.">        if (fecha == null || horaIni.length != 2 || horaFin.length != 2) {</span>
-<span class="fc" id="L702">            return null;</span>
+<span class="pc bpc" id="L700" title="2 of 6 branches missed.">        if (fecha == null || horaIni.length != 2 || horaFin.length != 2) {</span>
+<span class="fc" id="L701">            return null;</span>
         }
 
-<span class="fc" id="L705">        Cita cita = (Cita) cbox_citaMod.getSelectedItem();</span>
-<span class="fc" id="L706">        cita.setDoctor(idDoctor);</span>
-<span class="fc" id="L707">        cita.setPaciente(idPaciente);</span>
-<span class="fc" id="L708">        cita.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));</span>
-<span class="fc" id="L709">        cita.setHorainicio(new Time(Integer.parseInt(horaIni[0]), Integer.parseInt(horaIni[1]), 0));</span>
-<span class="fc" id="L710">        cita.setHorafin(new Time(Integer.parseInt(horaFin[0]), Integer.parseInt(horaFin[1]), 0));</span>
-<span class="fc" id="L711">        return cita;</span>
+<span class="fc" id="L704">        Cita cita = (Cita) cbox_citaMod.getSelectedItem();</span>
+<span class="fc" id="L705">        cita.setDoctor(idDoctor);</span>
+<span class="fc" id="L706">        cita.setPaciente(idPaciente);</span>
+<span class="fc" id="L707">        cita.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));</span>
+<span class="fc" id="L708">        cita.setHorainicio(new Time(Integer.parseInt(horaIni[0]), Integer.parseInt(horaIni[1]), 0));</span>
+<span class="fc" id="L709">        cita.setHorafin(new Time(Integer.parseInt(horaFin[0]), Integer.parseInt(horaFin[1]), 0));</span>
+<span class="fc" id="L710">        return cita;</span>
     }
 
     public boolean actualizarCita() {
-<span class="fc" id="L715">        Cita cita = getCitaMod();</span>
-<span class="fc bfc" id="L716" title="All 2 branches covered.">        if (cita == null) {</span>
-<span class="fc" id="L717">            JOptionPane.showMessageDialog(this, &quot;Los datos ingresados estan incompletos o son inválidos&quot;);</span>
-<span class="fc" id="L718">            return false;</span>
+<span class="fc" id="L714">        Cita cita = getCitaMod();</span>
+<span class="fc bfc" id="L715" title="All 2 branches covered.">        if (cita == null) {</span>
+<span class="fc" id="L716">            JOptionPane.showMessageDialog(this, &quot;Los datos ingresados estan incompletos o son inválidos&quot;);</span>
+<span class="fc" id="L717">            return false;</span>
         }
 
-<span class="fc" id="L721">        System.out.println(cita);</span>
-<span class="fc" id="L722">        Consultas con = new Consultas();</span>
-<span class="pc bpc" id="L723" title="1 of 2 branches missed.">        if (con.modificarCita(DB.obtener(), cita)) {</span>
-<span class="fc" id="L724">            JOptionPane.showMessageDialog(this, &quot;Cita actualizada exitosamente&quot;);</span>
+<span class="fc" id="L720">        System.out.println(cita);</span>
+<span class="fc" id="L721">        Consultas con = new Consultas();</span>
+<span class="pc bpc" id="L722" title="1 of 2 branches missed.">        if (con.modificarCita(DB.obtener(), cita)) {</span>
+<span class="fc" id="L723">            JOptionPane.showMessageDialog(this, &quot;Cita actualizada exitosamente&quot;);</span>
         } else {
-<span class="nc" id="L726">            JOptionPane.showMessageDialog(this, &quot;No se pudo crear la cita, revise la consola para mas detalles&quot;);</span>
+<span class="nc" id="L725">            JOptionPane.showMessageDialog(this, &quot;No se pudo crear la cita, revise la consola para mas detalles&quot;);</span>
         }
 
-<span class="fc" id="L729">        return true;</span>
+<span class="fc" id="L728">        return true;</span>
     }
 
-    public void llenarDoctores() {
-<span class="fc" id="L733">        Consultas con = new Consultas();</span>
+    public boolean llenarDoctores() {
+<span class="fc" id="L732">        Consultas con = new Consultas();</span>
         try {
-<span class="fc" id="L735">            LinkedList&lt;Doctor&gt; docs = con.getDoctores((java.sql.Connection) DB.obtener());</span>
-<span class="fc" id="L736">            setDoctors(docs);</span>
+<span class="fc" id="L734">            LinkedList&lt;Doctor&gt; docs = con.getDoctores((java.sql.Connection) DB.obtener());</span>
+<span class="fc" id="L735">            setDoctors(docs);</span>
+<span class="fc" id="L736">            return true;</span>
 <span class="nc" id="L737">        } catch (SQLException ex) {</span>
 <span class="nc" id="L738">            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);</span>
-<span class="fc" id="L739">        }</span>
-<span class="fc" id="L740">    }</span>
+<span class="nc" id="L739">            return false;</span>
+        }
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

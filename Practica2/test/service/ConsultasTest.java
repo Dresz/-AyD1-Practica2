@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.LinkedList;
+import java.util.UUID;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
@@ -54,7 +55,7 @@ public class ConsultasTest {
         
         Paciente paciente = new Paciente();
         paciente.setDireccion("direccion inventada");
-        paciente.setEmail("inventado@protonmail.com");
+        paciente.setEmail(UUID.randomUUID().toString()+"-inventado@protonmail.com");
         paciente.setFechanac("2000-05-04");
         paciente.setNombre("paciente enfermo");
         paciente.setPassword("hola");
@@ -222,7 +223,7 @@ public class ConsultasTest {
         Consultas instance = new Consultas();
         LinkedList<ReporteModel> expResult = new LinkedList<>();
         LinkedList<ReporteModel> result = instance.getReporte1(conexion, fecha);
-        assertEquals(fecha, result.get(0).getFecha().toString());
+        assertEquals(0, result.size());
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -239,11 +240,11 @@ public class ConsultasTest {
         Consultas instance = new Consultas();
         LinkedList<ReporteModel> expResult = new LinkedList<>();
         LinkedList<ReporteModel> result = instance.getReporte2(conexion, buscar, tipo);
-        assertEquals(expResult, result);
+        assertTrue(result.size() > 0);
         
         tipo = 1;
         result = instance.getReporte2(conexion, buscar, tipo);
-        assertEquals(expResult, result);
+        assertTrue(result.size() > 0);
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
