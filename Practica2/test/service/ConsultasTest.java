@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
+import models.ReporteModel;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -198,6 +199,39 @@ public class ConsultasTest {
         Consultas instance = new Consultas();
         Boolean expResult = null;
         Boolean result = instance.Eliminar_Cita(conexion, id);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getReporte1 method, of class Consultas.
+     */
+    @Test
+    public void testGetReporte1() throws Exception {
+        System.out.println("getReporte1");
+        Connection conexion = DB.obtener();
+        String fecha = "2019-09-12";
+        Consultas instance = new Consultas();
+        LinkedList<ReporteModel> expResult = null;
+        LinkedList<ReporteModel> result = instance.getReporte1(conexion, fecha);
+        assertEquals(fecha, result.get(0).getFecha().toString());
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getReporte2 method, of class Consultas.
+     */
+    @Test
+    public void testGetReporte2() throws Exception {
+        System.out.println("getReporte2");
+        Connection conexion = null;
+        int buscar = 0;
+        int tipo = 0;
+        Consultas instance = new Consultas();
+        LinkedList<ReporteModel> expResult = null;
+        LinkedList<ReporteModel> result = instance.getReporte2(conexion, buscar, tipo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
