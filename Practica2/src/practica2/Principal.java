@@ -1,7 +1,14 @@
 package practica2;
 
+<<<<<<< HEAD
+import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.sql.Timestamp;
+=======
+import java.sql.SQLException;
+import java.sql.Time;
+>>>>>>> develop
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.logging.Level;
@@ -9,7 +16,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import models.Cita;
 import models.Doctor;
+<<<<<<< HEAD
+=======
 import models.Paciente;
+>>>>>>> develop
 import service.Consultas;
 import service.DB;
 
@@ -23,6 +33,10 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
+        jButton1 = new javax.swing.JButton();
+=======
+>>>>>>> develop
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -39,6 +53,10 @@ public class Principal extends javax.swing.JFrame {
         jt_hora_fin = new javax.swing.JTextPane();
         fechaCita = new com.toedter.calendar.JDateChooser();
         jPanel2 = new javax.swing.JPanel();
+<<<<<<< HEAD
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableCitaMod = new javax.swing.JTable();
+=======
         cbox_citaMod = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         btn_guardarCita = new javax.swing.JButton();
@@ -59,6 +77,7 @@ public class Principal extends javax.swing.JFrame {
         cbox_pacienteMod = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+>>>>>>> develop
         jPanel3 = new javax.swing.JPanel();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
@@ -72,7 +91,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+<<<<<<< HEAD
+        jPanel4 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+=======
         jButton3 = new javax.swing.JButton();
+>>>>>>> develop
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -81,11 +105,36 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+        jButton1.setText("Cerrar Sesion");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+=======
+>>>>>>> develop
         jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jTabbedPane2StateChanged(evt);
             }
         });
+<<<<<<< HEAD
+        jTabbedPane2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane2MouseClicked(evt);
+            }
+        });
+        jTabbedPane2.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                jTabbedPane2CaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
+        });
+=======
+>>>>>>> develop
 
         comboDoctores.setModel(new javax.swing.DefaultComboBoxModel<Doctor>());
 
@@ -100,11 +149,19 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+        jLabel4.setText("Hora Inicio (HH:MM:SS)");
+
+        jScrollPane1.setViewportView(jt_hora_ini);
+
+        jLabel5.setText("Hora Fin (HH:MM:SS)");
+=======
         jLabel4.setText("Hora Inicio (HH:MM)");
 
         jScrollPane1.setViewportView(jt_hora_ini);
 
         jLabel5.setText("Hora Fin (HH:MM)");
+>>>>>>> develop
 
         jScrollPane2.setViewportView(jt_hora_fin);
 
@@ -168,6 +225,20 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Crear Cita", jPanel1);
 
+<<<<<<< HEAD
+        tableCitaMod.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(tableCitaMod);
+=======
         cbox_citaMod.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbox_citaModItemStateChanged(evt);
@@ -207,11 +278,23 @@ public class Principal extends javax.swing.JFrame {
         comboDoctores.setModel(new javax.swing.DefaultComboBoxModel<Doctor>());
 
         jLabel20.setText("Paciente");
+>>>>>>> develop
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+            .addGap(0, 370, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 246, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
+=======
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,10 +362,13 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addGap(19, 19, 19))
+>>>>>>> develop
         );
 
         jTabbedPane2.addTab("Modificar Cita", jPanel2);
 
+<<<<<<< HEAD
+=======
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -296,12 +382,21 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Reportes", jPanel4);
 
+>>>>>>> develop
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox3ItemStateChanged(evt);
             }
         });
+<<<<<<< HEAD
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+=======
+>>>>>>> develop
 
         jLabel10.setText("Citas");
 
@@ -393,22 +488,50 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Cancelar Cita", jPanel3);
 
+<<<<<<< HEAD
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 370, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 246, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Reportes", jPanel4);
+=======
         jButton3.setText("Cerrar Sesion");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+>>>>>>> develop
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+            .addComponent(jSeparator1)
+=======
+>>>>>>> develop
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(104, 104, 104)
+                        .addComponent(jButton1)))
+                .addContainerGap())
+=======
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -419,11 +542,22 @@ public class Principal extends javax.swing.JFrame {
                     .addContainerGap(278, Short.MAX_VALUE)
                     .addComponent(jButton3)
                     .addGap(20, 20, 20)))
+>>>>>>> develop
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel1))
+                .addGap(1, 1, 1)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -432,11 +566,23 @@ public class Principal extends javax.swing.JFrame {
                     .addGap(21, 21, 21)
                     .addComponent(jButton3)
                     .addContainerGap(304, Short.MAX_VALUE)))
+>>>>>>> develop
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        Login login = new Login();
+        login.show();
+        this.show(false);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+=======
+>>>>>>> develop
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         //printCitas();
     }//GEN-LAST:event_formWindowOpened
@@ -444,15 +590,30 @@ public class Principal extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Consultas con = new Consultas();
         try {
+<<<<<<< HEAD
+            boolean si = con.Eliminar_Cita((java.sql.Connection) DB.obtener(), jComboBox3.getSelectedItem().toString());
+            if(si)
+            {
+                System.out.println("Se elimino correctamente");
+            }
+=======
             con.Eliminar_Cita((java.sql.Connection) DB.obtener(), jComboBox3.getSelectedItem().toString());
+>>>>>>> develop
         } catch (SQLException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+<<<<<<< HEAD
+
+    private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
+        //Comentado para no poner lenta la app
+        if (jTabbedPane2.getSelectedIndex() == 0 && false) {
+=======
     LinkedList<Cita> citas = null;
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
         //Comentado para no poner lenta la app
         if (jTabbedPane2.getSelectedIndex() == 0) {
+>>>>>>> develop
             Consultas con = new Consultas();
             try {
                 LinkedList<Doctor> docs = con.getDoctores((java.sql.Connection) DB.obtener());
@@ -461,6 +622,8 @@ public class Principal extends javax.swing.JFrame {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+<<<<<<< HEAD
+=======
         if (jTabbedPane2.getSelectedIndex() == 3) {
             Consultas con = new Consultas();
             try {
@@ -475,11 +638,16 @@ public class Principal extends javax.swing.JFrame {
             }
         }
 
+>>>>>>> develop
 
     }//GEN-LAST:event_jTabbedPane2StateChanged
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+<<<<<<< HEAD
+        Cita c = crearCita();
+=======
         Cita c = crearCita((Doctor) comboDoctores.getSelectedItem(), 1, fechaCita.getDate(), jt_hora_ini.getText(), jt_hora_fin.getText());        
+>>>>>>> develop
         if (c == null) {
             JOptionPane.showMessageDialog(this, "Los datos ingresados estan incompletos o son invalidos");
             return;
@@ -491,6 +659,81 @@ public class Principal extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo crear la cita, revise la consola para mas detalles");
         }
+<<<<<<< HEAD
+
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+    int Tab=0;
+    private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
+        int clicked = jTabbedPane2.getSelectedIndex();
+        if (clicked ==2) {
+            if(Tab!=clicked)
+            {
+                Consultas con = new Consultas();
+                try {
+                    LinkedList<Cita> citas = con.getCitas((java.sql.Connection) DB.obtener());
+                    jComboBox3.removeAllItems();
+                    for(Cita cita:citas)
+                    {
+                        System.out.println("Se escribio: "+cita.getIdcita());
+                        jComboBox3.addItem(cita.getIdcita()+"");
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        Tab = clicked;
+        
+    }//GEN-LAST:event_jTabbedPane2MouseClicked
+
+    private void jTabbedPane2CaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jTabbedPane2CaretPositionChanged
+        System.out.println(jTabbedPane2.countComponents());
+                
+    }//GEN-LAST:event_jTabbedPane2CaretPositionChanged
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+       
+       
+                
+            
+        
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
+       Consultas con = new Consultas();
+                try {
+                    LinkedList<Cita> citas = con.getCitas((java.sql.Connection) DB.obtener());
+                    
+                    for(Cita cita:citas)
+                    {
+                        if (cita.getIdcita()==Integer.parseInt(jComboBox3.getSelectedItem().toString())) {
+                            jTextField3.setText(cita.getDoctor()+"");    
+                            jTextField4.setText(cita.getFecha()+"");
+                            jTextField5.setText(cita.getHorainicio()+"");
+                            jTextField6.setText(cita.getHorafin()+"");
+
+
+                        }
+                        
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+    }//GEN-LAST:event_jComboBox3ItemStateChanged
+
+    private void printCitas() {
+        Consultas consulta = new Consultas();
+        try {
+            System.out.println(consulta.getCitas(DB.obtener()));
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static void main(String args[]) {
+
+=======
     }//GEN-LAST:event_jButton2ActionPerformed
     
     private void btn_guardarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCitaActionPerformed
@@ -548,6 +791,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ItemStateChanged
 
     public static void main(String args[]) {
+>>>>>>> develop
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
@@ -556,6 +800,12 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+    private javax.swing.JComboBox<Doctor> comboDoctores;
+    private com.toedter.calendar.JDateChooser fechaCita;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+=======
     private javax.swing.JButton btnActualizarMod;
     private javax.swing.JButton btn_guardarCita;
     private javax.swing.JComboBox<Cita> cbox_citaMod;
@@ -566,6 +816,7 @@ public class Principal extends javax.swing.JFrame {
     protected com.toedter.calendar.JDateChooser fechaCitaMod;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+>>>>>>> develop
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
@@ -574,6 +825,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+<<<<<<< HEAD
+    private javax.swing.JLabel jLabel2;
+=======
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -581,6 +835,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+>>>>>>> develop
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -591,9 +846,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+<<<<<<< HEAD
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+=======
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+>>>>>>> develop
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -601,13 +861,21 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextPane jt_hora_fin;
     private javax.swing.JTextPane jt_hora_ini;
+<<<<<<< HEAD
+    private javax.swing.JTable tableCitaMod;
+=======
     protected javax.swing.JTextPane tp_horaFinMod;
     protected javax.swing.JTextPane tp_horaIniMod;
+>>>>>>> develop
     // End of variables declaration//GEN-END:variables
 
     public void setUser(String email) {
         if (!email.equals("admin@admin.com")) {
+<<<<<<< HEAD
+            jTabbedPane2.setEnabledAt(3, false);
+=======
             // jTabbedPane2.setEnabledAt(3, false);
+>>>>>>> develop
         }
         jLabel1.setText(email);
     }
@@ -619,6 +887,20 @@ public class Principal extends javax.swing.JFrame {
         for (Doctor doctor : doctores) {
             comboDoctores.addItem(doctor);
         }
+<<<<<<< HEAD
+        return true;
+    }
+
+    public Cita crearCita() {
+        Doctor doctor = (Doctor) comboDoctores.getSelectedItem();
+        int idDoctor = 0;     // Estos campos se tienen que modificar luego
+        int paciente = 0; //Estos campos se tienen que modificar luego
+        Date fecha = fechaCita.getDate();
+        String[] hora_Ini = jt_hora_ini.getText().split(":");
+        String[] hora_Fin = jt_hora_fin.getText().split(":");
+
+        if (fecha == null || hora_Ini.length != 3 || hora_Fin.length != 3) {
+=======
         
         return true;
     }
@@ -629,10 +911,20 @@ public class Principal extends javax.swing.JFrame {
         String[] hora_Fin = horaFin.split(":");
 
         if (fecha == null || hora_Ini.length != 2 || hora_Fin.length != 2) {
+>>>>>>> develop
             return null;
         }
 
         Cita c = new Cita();
+<<<<<<< HEAD
+        c.setDoctor(idDoctor);
+        c.setPaciente(paciente);
+        c.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));
+        c.setHorainicio(new Time(Integer.parseInt(hora_Ini[0]), Integer.parseInt(hora_Ini[1]), Integer.parseInt(hora_Ini[2])));
+        c.setHorafin(new Time(Integer.parseInt(hora_Fin[0]), Integer.parseInt(hora_Fin[1]), Integer.parseInt(hora_Fin[2])));
+        return c;
+    }
+=======
         c.setDoctor(doctor.getIddoctor());
         c.setPaciente(paciente);
         c.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));
@@ -740,4 +1032,5 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
+>>>>>>> develop
 }

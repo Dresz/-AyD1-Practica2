@@ -1,7 +1,10 @@
 package service;
 
 import java.sql.Connection;
+<<<<<<< HEAD
+=======
 import java.sql.Date;
+>>>>>>> develop
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +14,10 @@ import java.util.logging.Logger;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
+<<<<<<< HEAD
+=======
 import models.ReporteModel;
+>>>>>>> develop
 
 public class Consultas {
     
@@ -93,19 +99,34 @@ public class Consultas {
     
     public boolean crearCita(Connection connection, Cita cita){
         try{
+<<<<<<< HEAD
+            
+            PreparedStatement consulta;
+            
+            consulta = connection.prepareStatement("INSERT INTO Cita"
+                    + "(doctor,paciente,fecha,horainicio,horafin) VALUES (?,?,?,?,?);");
+=======
             PreparedStatement consulta;                       
             
             consulta = connection.prepareStatement("INSERT INTO Cita(doctor,paciente,fecha,horainicio,horafin) VALUES (?,?,?,?,?)");
+>>>>>>> develop
             
             consulta.setInt(1,cita.getDoctor());
             consulta.setInt(2,cita.getPaciente());
             consulta.setDate(3,cita.getFecha());
             consulta.setTime(4,cita.getHorainicio());
             consulta.setTime(5,cita.getHorafin());
+<<<<<<< HEAD
+            
+            
+            consulta.executeUpdate();            
+            
+=======
                         
             consulta.executeUpdate();       
             
             
+>>>>>>> develop
             
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -116,6 +137,12 @@ public class Consultas {
         
     }
     
+<<<<<<< HEAD
+    
+    
+    public LinkedList<Cita> getCitas(Connection conexion) throws SQLException{
+        PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita");
+=======
     /*MOD*/
     public Doctor getDoctorPorId(Connection conexion, int iddoctor) throws SQLException{
         PreparedStatement consulta = conexion.prepareStatement("SELECT doc.iddoctor, doc.nombre, doc.telefono, esp.nombre\n" +
@@ -193,6 +220,7 @@ public class Consultas {
     }
     public LinkedList<Cita> getCitasid(Connection conexion,String id) throws SQLException{
         PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita ci,Paciente pa WHERE pa.email='"+id+"' AND ci.paciente = pa.idpaciente;");
+>>>>>>> develop
         ResultSet res = consulta.executeQuery();
 
         LinkedList<Cita> citas = new LinkedList<>();
@@ -210,6 +238,22 @@ public class Consultas {
         return citas;
     }
     
+<<<<<<< HEAD
+    public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
+    {
+       try {
+           System.out.println("se va a elminar: "+id);
+            PreparedStatement consulta = conexion.prepareStatement("Delete FROM Cita WHERE idcita =  "+id+";");
+            //consulta.setString(1,id);
+            consulta.executeUpdate();
+            return true;
+       } catch (Exception e) {
+           System.out.println(""+e);
+           return false;
+       }
+    }
+
+=======
     public boolean modificarCita(Connection connection, Cita cita){
         try{
             PreparedStatement consulta;
@@ -349,4 +393,5 @@ public class Consultas {
         
         return citas;
     }
+>>>>>>> develop
 }
