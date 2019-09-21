@@ -51,6 +51,7 @@ public class ConsultasTest {
     public void testRegistrar() {
         System.out.println("registrar");
         Connection connection = DB.obtener();//iniciamos conexion
+        
         Paciente paciente = new Paciente();
         paciente.setDireccion("direccion inventada");
         paciente.setEmail("inventado@protonmail.com");
@@ -63,8 +64,6 @@ public class ConsultasTest {
         boolean expResult = true;
         boolean result = instance.registrar(connection, paciente);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -73,15 +72,14 @@ public class ConsultasTest {
     @Test
     public void testLogin() throws Exception {
         System.out.println("login");
-        Connection conexion = DB.obtener();
+        Connection conexion = DB.obtener();//obtenemos la conexion
+        
         String email = "inventado@protonmail.com";
         String password = "adios";
         Consultas instance = new Consultas();
         boolean expResult = false;
         boolean result = instance.login(conexion, email, password);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     /**
@@ -195,9 +193,9 @@ public class ConsultasTest {
     public void testEliminar_Cita() throws Exception {
         System.out.println("Eliminar_Cita");
         Connection conexion = null;
-        String id = "";
+        String id = "13";
         Consultas instance = new Consultas();
-        Boolean expResult = null;
+        Boolean expResult = true;
         Boolean result = instance.Eliminar_Cita(conexion, id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

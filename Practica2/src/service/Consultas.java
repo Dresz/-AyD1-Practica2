@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -217,7 +216,7 @@ public class Consultas {
     public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
     {
        try {
-            PreparedStatement consulta = conexion.prepareStatement("Delete * FROM Cita where idcita =  ?;");
+            PreparedStatement consulta = conexion.prepareStatement("Delete * FROM Cita where idcita =  "+id+";");
             consulta.setString(1,id);
             consulta.executeUpdate();
             return true;
