@@ -5,7 +5,6 @@
  */
 package practica2;
 
-import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -62,7 +61,7 @@ public class RegistroTest {
         assertFalse(result);
         
         reg.jnombre.setText("nombre prueba");
-        reg.jemail.setText("email-"+UUID.randomUUID().toString() + "@prueba.com");
+        reg.jemail.setText("email@prueba.com");
         reg.jcontra1.setText("pass_prueba");
         reg.jcontra2.setText("pass_prueba");
         reg.jdireccion.setText("dir test");
