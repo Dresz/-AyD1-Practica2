@@ -194,9 +194,9 @@ public class ConsultasTest {
     public void testEliminar_Cita() throws Exception {
         System.out.println("Eliminar_Cita");
         Connection conexion = null;
-        String id = "";
+        String id = "13";
         Consultas instance = new Consultas();
-        Boolean expResult = null;
+        Boolean expResult = true;
         Boolean result = instance.Eliminar_Cita(conexion, id);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

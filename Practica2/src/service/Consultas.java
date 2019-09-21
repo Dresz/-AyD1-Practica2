@@ -215,7 +215,7 @@ public class Consultas {
     public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
     {
        try {
-            PreparedStatement consulta = conexion.prepareStatement("Delete * FROM Cita where idcita =  ?;");
+            PreparedStatement consulta = conexion.prepareStatement("Delete * FROM Cita where idcita =  "+id+";");
             consulta.setString(1,id);
             consulta.executeUpdate();
             return true;
