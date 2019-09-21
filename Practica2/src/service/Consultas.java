@@ -258,6 +258,7 @@ public class Consultas {
        try {
 
            System.out.println("la cita: "+id);
+            PreparedStatement consulta = conexion.prepareStatement("Delete FROM Cita WHERE  idcita = "+id+";");
             consulta.executeUpdate();
             return true;
        } catch (Exception e) {
