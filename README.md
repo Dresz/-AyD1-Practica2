@@ -6,8 +6,8 @@
 * ### *Agendar una cita médica* 
 * ### *Modificar cita médica*
 * ### *Cancelar una cita médica*
-* ### *Mostrar reportes*
-* ### *Generar PDF de reportes*
+* ### *Generar reportes*
+* ### *Exportar reportes a PDF*
 ## Herramientas que vamos a usar:
 * ### *Lenguaje de programacion: Java*
-* ### *Test Framework: JUnix*
+* ### *Test Framework: JUnit*
