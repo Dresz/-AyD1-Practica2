@@ -1,6 +1,7 @@
 package service;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import java.util.logging.Logger;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
+import models.ReporteModel;
 
 public class Consultas {
     
@@ -224,5 +226,90 @@ public class Consultas {
            return false;
        }
     }
+    public LinkedList<ReporteModel> getReporte1(Connection conexion, String fecha) throws SQLException{
+        String sql="";
+        PreparedStatement consulta;
+        ResultSet res=null;
+        
+        if((fecha.equals("ok"))){
+            sql="SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n" +
+                                                                "FROM Doctor d, Especialidad e,Paciente p, Cita c \n" +
+                                                                "WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente "+
+                                                                ";";
+            
+            consulta= conexion.prepareStatement(sql);
+            res = consulta.executeQuery();
+        }
+        else {
+            Date fechabuscar=Date.valueOf(fecha);
+            sql="SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp\n" +
+                                                                "FROM Doctor d, Especialidad e,Paciente p, Cita c \n" +
+                                                                "WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente "+
+                                                                "AND c.fecha=? ;";
+            
+            consulta= conexion.prepareStatement(sql);
+            consulta.setDate(1,fechabuscar);
+            res = consulta.executeQuery();
+            
+        }
+        LinkedList<ReporteModel> citas = new LinkedList<>();
+        while(res.next()){
+            ReporteModel cita = new ReporteModel();
+            cita.setIdcita(res.getInt("idcita"));
+            cita.setDoctor(res.getString("doctor"));
+            cita.setPaciente(res.getString("paciente"));
+            cita.setCorreo(res.getString("correo"));
+            cita.setEspecialidad(res.getString("esp"));
+            cita.setFecha(res.getDate("fecha"));
+            cita.setHorainicio(res.getTime("horainicio"));
+            cita.setHorafin(res.getTime("horafin"));
+            citas.add(cita);
+        }
+        
+        return citas;
+    }
+    
+    public LinkedList<ReporteModel> getReporte2(Connection conexion, int buscar, int tipo) throws SQLException{
+        PreparedStatement consulta;
+        ResultSet res=null;
+        String sql="";
+        if(tipo==1){
+            sql="SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp \n" +
+                                                                "FROM Doctor d, Especialidad e,Paciente p, Cita c \n" +
+                                                                "WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente "+
+                                                                "AND c.paciente=? ;";
+            
+            consulta= conexion.prepareStatement(sql);
+            consulta.setInt(1,buscar);
+            res = consulta.executeQuery();
+        }
+        else {
+            sql="SELECT c.idcita as idcita, p.nombre as paciente, p.email as correo, d.nombre as doctor, c.fecha as fecha, c.horainicio as horainicio, c.horafin as horafin, e.nombre as esp\n" +
+                                                                "FROM Doctor d, Especialidad e,Paciente p, Cita c \n" +
+                                                                "WHERE d.especialidad = e.idespecialidad AND d.iddoctor=c.doctor AND c.paciente=p.idpaciente "+
+                                                                "AND c.doctor=? ;";
+            
+            consulta= conexion.prepareStatement(sql);
+            consulta.setInt(1,buscar);
+            res = consulta.executeQuery();
+            
+        }
+        
 
+        LinkedList<ReporteModel> citas = new LinkedList<>();
+        while(res.next()){
+            ReporteModel cita = new ReporteModel();
+            cita.setIdcita(res.getInt("idcita"));
+            cita.setDoctor(res.getString("doctor"));
+            cita.setPaciente(res.getString("paciente"));
+            cita.setCorreo(res.getString("correo"));
+            cita.setEspecialidad(res.getString("esp"));
+            cita.setFecha(res.getDate("fecha"));
+            cita.setHorainicio(res.getTime("horainicio"));
+            cita.setHorafin(res.getTime("horafin"));
+            citas.add(cita);
+        }
+        
+        return citas;
+    }
 }
