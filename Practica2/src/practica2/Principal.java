@@ -511,6 +511,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Login login = new Login();
+        login.show();
+        this.show(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnActualizarModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarModActionPerformed
@@ -698,7 +701,7 @@ public class Principal extends javax.swing.JFrame {
         String[] horaIni = tp_horaIniMod.getText().split(":");
         String[] horaFin = tp_horaFinMod.getText().split(":");
 
-        if (fecha == null || horaIni.length != 3 || horaFin.length != 3) {
+        if (fecha == null || horaIni.length != 2 || horaFin.length != 2) {
             return null;
         }
 
@@ -706,8 +709,8 @@ public class Principal extends javax.swing.JFrame {
         cita.setDoctor(idDoctor);
         cita.setPaciente(idPaciente);
         cita.setFecha(new java.sql.Date(fecha.getYear(), fecha.getMonth() + 1, fecha.getDate()));
-        cita.setHorainicio(new Time(Integer.parseInt(horaIni[0]), Integer.parseInt(horaIni[1]), Integer.parseInt(horaIni[2])));
-        cita.setHorafin(new Time(Integer.parseInt(horaFin[0]), Integer.parseInt(horaFin[1]), Integer.parseInt(horaFin[2])));
+        cita.setHorainicio(new Time(Integer.parseInt(horaIni[0]), Integer.parseInt(horaIni[1]), 0));
+        cita.setHorafin(new Time(Integer.parseInt(horaFin[0]), Integer.parseInt(horaFin[1]), 0));
         return cita;
     }
 

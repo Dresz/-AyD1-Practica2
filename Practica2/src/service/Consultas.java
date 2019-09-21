@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -94,8 +93,7 @@ public class Consultas {
     
     public boolean crearCita(Connection connection, Cita cita){
         try{
-            PreparedStatement consulta;
-                       
+            PreparedStatement consulta;                       
             
             consulta = connection.prepareStatement("INSERT INTO Cita(doctor,paciente,fecha,horainicio,horafin) VALUES (?,?,?,?,?)");
             
@@ -256,8 +254,13 @@ public class Consultas {
     public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
     {
        try {
+<<<<<<< HEAD
            System.out.println("la cita: "+id);
             PreparedStatement consulta = conexion.prepareStatement("Delete FROM Cita WHERE  idcita = "+id+";");
+=======
+            PreparedStatement consulta = conexion.prepareStatement("Delete * FROM Cita where idcita =  "+id+";");
+            consulta.setString(1,id);
+>>>>>>> test
             consulta.executeUpdate();
             return true;
        } catch (Exception e) {
