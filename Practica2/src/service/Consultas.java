@@ -193,6 +193,24 @@ public class Consultas {
         
         return citas;
     }
+    public LinkedList<Cita> getCitasid(Connection conexion,String id) throws SQLException{
+        PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita ci,Paciente pa WHERE pa.email='"+id+"' AND ci.paciente = pa.idpaciente;");
+        ResultSet res = consulta.executeQuery();
+
+        LinkedList<Cita> citas = new LinkedList<>();
+        while(res.next()){
+            Cita cita = new Cita();
+            cita.setIdcita(res.getInt("idcita"));
+            cita.setDoctor(res.getInt("doctor"));
+            cita.setPaciente(res.getInt("paciente"));
+            cita.setFecha(res.getDate("fecha"));
+            cita.setHorainicio(res.getTime("horainicio"));
+            cita.setHorafin(res.getTime("horafin"));
+            citas.add(cita);
+        }
+        
+        return citas;
+    }
     
     public boolean modificarCita(Connection connection, Cita cita){
         try{
@@ -213,13 +231,33 @@ public class Consultas {
             return false;
         }
     }
-    
+    public Cita Get_Cita(Connection conexion,String id)throws SQLException
+    {
+       try {
+            PreparedStatement consulta = conexion.prepareStatement("SELECT * FROM Cita where idcita =  "+id+";");
+            ResultSet res = consulta.executeQuery();
+
+        
+        
+            Cita cita = new Cita();
+            cita.setIdcita(res.getInt("idcita"));
+            cita.setDoctor(res.getInt("doctor"));
+            cita.setPaciente(res.getInt("paciente"));
+            cita.setFecha(res.getDate("fecha"));
+            cita.setHorainicio(res.getTime("horainicio"));
+            cita.setHorafin(res.getTime("horafin"));
+            return cita;
+        
+       } catch (Exception e) {
+           return null;
+       }
+    }
     
     public Boolean Eliminar_Cita(Connection conexion,String id)throws SQLException
     {
        try {
-            PreparedStatement consulta = conexion.prepareStatement("Delete * FROM Cita where idcita =  ?;");
-            consulta.setString(1,id);
+           System.out.println("la cita: "+id);
+            PreparedStatement consulta = conexion.prepareStatement("Delete FROM Cita WHERE  idcita = "+id+";");
             consulta.executeUpdate();
             return true;
        } catch (Exception e) {
