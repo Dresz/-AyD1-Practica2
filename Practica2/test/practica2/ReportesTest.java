@@ -51,8 +51,6 @@ public class ReportesTest {
         System.out.println("main");
         String[] args = null;
         Reportes.main(args);
-        Reportes rep = new Reportes();
-        assertNotNull(rep);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

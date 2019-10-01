@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.LinkedList;
-import java.util.UUID;
 import models.Cita;
 import models.Doctor;
 import models.Paciente;
@@ -55,7 +54,7 @@ public class ConsultasTest {
         
         Paciente paciente = new Paciente();
         paciente.setDireccion("direccion inventada");
-        paciente.setEmail(UUID.randomUUID().toString()+"-inventado@protonmail.com");
+        paciente.setEmail("inventado@protonmail.com");
         paciente.setFechanac("2000-05-04");
         paciente.setNombre("paciente enfermo");
         paciente.setPassword("hola");
@@ -197,6 +196,18 @@ public class ConsultasTest {
         cita.setHorafin(Time.valueOf("01:00:10"));
         Boolean result = instance.modificarCita(conexion, cita);
         assertTrue(result);
+    }
+    
+    /**
+     * Test of Get_Cita method, of class Consultas.
+     */
+    @Test
+    public void testGet_Cita() throws Exception {
+        System.out.println("Get_Cita");
+        String id = "-1";
+        Consultas instance = new Consultas();
+        Cita result = instance.Get_Cita(DB.obtener(), id);
+        assertNull(result);
     }
 
     /**
